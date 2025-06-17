@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات السيارات الكورية (هيونداي وكيا) - MOWAFFARCAR</title> <!-- تم التعديل -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- ... -->
+    <!-- أ. الشريط العلوي الثابت (Top Bar) -->
+     <!-- حاوية الرأسية الثابتة -->
+      <div class="sticky-header-wrapper">
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#">محدد موقع المتجر</a>
+                <a href="order-tracking.html">تتبع الطلب</a>
+                <a href="faq.html">الأسئلة الشائعة</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="language-selector">
+                    <a href="#" class="active-lang">العربية</a> | <a href="#">ENG</a>
+                </div>
+                <div class="currency-selector">
+                    <span>USD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= الرأسية الرئيسية (Main Header) ======================= -->
+  
+<header class="main-header">
+    <div class="container">
+        
+        <!-- شعار الموقع: PORICAR -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR.svg" loading="lazy">
+                <!-- يمكنك إضافة اسم الموقع كنص إذا لم يكن مدمجًا بالكامل في صورة الشعار -->
+                <!-- <span class="logo-text">PORICAR</span> -->
+            </a>
+        </div>
+
+        <!-- شريط البحث -->
+        <div class="header-search">
+            <form action="search-results.html" method="GET" class="search-form">
+                <div class="search-category-select">
+                    <select name="category" id="search-category">
+                        <option value="all">جميع الفئات</option>
+                        <option value="body-parts">اكسسوارات داخلية </option>
+                        <option value="engine">اكسسوارات خارجية</option>
+                        <option value="electronics">إلكترونيات</option>
+                        <option value="various-products">منتجات متنوعة</option>
+                        <!-- أضف المزيد من الفئات -->
+                    </select>
+                    <i class="fa-solid fa-angle-down select-arrow"></i> <!-- أيقونة للسهم المنسدل -->
+                </div>
+                <input type="search" name="query" placeholder="ابحث عن منتجات، ماركات، أو أرقام قطع..." class="search-input">
+                <button type="submit" class="btn btn-secondary btn-md search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <!-- <span>بحث</span> يمكنك إظهار كلمة "بحث" إذا كان هناك مساحة كافية -->
+                </button>
+            </form>
+        </div>
+
+        <!-- إجراءات الرأسية (الهاتف، الرغبات، السلة، المستخدم) -->
+        <div class="header-actions">
+            <a href="tel:967776040888+" class="action-item phone-link">
+                <i class="fa-solid fa-phone-volume"></i>
+                <div class="action-text">
+                    <span>اتصل بنا الآن</span>
+                    <strong>967776040888+</strong>
+                </div>
+            </a>
+            <a href="wishlist.html" class="action-item">
+                <i class="fa-regular fa-heart"></i>
+                <span class="badge">3</span>
+            </a>
+            <a href="cart.html" class="action-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge">2</span>
+            </a>
+            <a href="account.html" class="action-item">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </div>
+</header>
+</div>
+<!-- نهاية sticky-header-wrapper -->
+<!-- نهاية الرأسية الرئيسية -->
+   
+    <!-- ======================= شريط التنقل الرئيسي (Main Navigation) ======================= -->
+    <nav class="main-navigation">
+        <div class="container">
+            <div class="nav-left">
+                <button class="browse-categories-btn btn btn-primary btn-md"  
+                aria-expanded="false" 
+            aria-controls="main-nav-links">
+                    
+                    <i class="fa-solid fa-bars"></i>
+                    <span>تصفح الفئات</span>
+                </button>
+                <ul class="nav-links" id="main-nav-links">
+                    <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="products.html" class="nav-link">المتجر</a></li>
+                    <li><a href="about-us.html" class="nav-link">من نحن</a></li>
+                    <li><a href="blog.html" class="nav-link">المدونة</a></li>
+                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                 <span class="nav-promo-text">شحن مجاني للطلبات فوق 50$!</span> 
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================= المحتوى الرئيسي لصفحة السيارات الكورية ======================= -->
+    <main class="page-content brand-page section-padding">
+        <div class="container">
+            <!-- مسار التنقل -->
+            <nav aria-label="breadcrumb" class="breadcrumbs">
+                <ol>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المتجر</a></li>
+                    <li aria-current="page">سيارات كورية</li> <!-- تم التعديل -->
+                </ol>
+            </nav>
+
+            <!-- رأسية صفحة العلامة التجارية -->
+            <header class="brand-page-header text-center section-padding">
+                <div class="korean-brand-logos"> <!-- حاوية لشعاري هيونداي وكيا -->
+                    <img src="images/brands/hyundai-logo.png" alt="شعار هيونداي" class="brand-page-main-logo-small" loading="lazy">
+                    <img src="images/brands/kia-logo.png" alt="شعار كيا" class="brand-page-main-logo-small" loading="lazy">
+                </div>
+                <h1 class="page-title h1-style">إكسسوارات وقطع غيار السيارات الكورية</h1> <!-- تم التعديل -->
+                <p class="brand-page-description p2-style">
+                    تشكيلة واسعة من قطع الغيار والإكسسوارات لسيارات هيونداي وكيا، تجمع بين الجودة والأداء الموثوق. <!-- تم التعديل -->
+                </p>
+            </header>
+
+            <!-- قسم اختيار الموديل -->
+            <section class="select-model-section">
+                <div class="section-header text-center">
+                    <h3 class="section-title h3-style">اختر موديل سيارتك (هيونداي/كيا)</h3> <!-- تم التعديل -->
+                    <p class="section-description p3-style">اختر موديل سيارتك الكورية لعرض المنتجات المتوافقة</p>
+                </div>
+                
+                <div class="models-grid">
+                    <!-- موديلات هيونداي -->
+                    <a href="#hyundai-elantra" class="model-card" data-model="elantra">
+                        <div class="model-card-image"><img src="images/models/hyundai-elantra.png" alt="هيونداي إلنترا" loading="lazy"></div>
+                        <div class="model-card-content"><h4 class="model-card-name h5-style">إلنترا</h4><span class="model-card-cta p4-style">عرض المنتجات <i class="fa-solid fa-arrow-left"></i></span></div>
+                    </a>
+                    <a href="#hyundai-sonata" class="model-card" data-model="sonata">
+                        <div class="model-card-image"><img src="images/models/hyundai-sonata.png" alt="هيونداي سوناتا" loading="lazy"></div>
+                        <div class="model-card-content"><h4 class="model-card-name h5-style">سوناتا</h4><span class="model-card-cta p4-style">عرض المنتجات <i class="fa-solid fa-arrow-left"></i></span></div>
+                    </a>
+                    <!-- موديلات كيا -->
+                    <a href="#kia-cerato" class="model-card" data-model="cerato">
+                        <div class="model-card-image"><img src="images/models/kia-cerato.png" alt="كيا سيراتو" loading="lazy"></div>
+                        <div class="model-card-content"><h4 class="model-card-name h5-style">سيراتو</h4><span class="model-card-cta p4-style">عرض المنتجات <i class="fa-solid fa-arrow-left"></i></span></div>
+                    </a>
+                    <a href="#kia-sportage" class="model-card" data-model="sportage">
+                        <div class="model-card-image"><img src="images/models/kia-sportage.png" alt="كيا سبورتاج" loading="lazy"></div>
+                        <div class="model-card-content"><h4 class="model-card-name h5-style">سبورتاج</h4><span class="model-card-cta p4-style">عرض المنتجات <i class="fa-solid fa-arrow-left"></i></span></div>
+                    </a>
+                    <!-- يمكنك إضافة المزيد من موديلات هيونداي وكيا -->
+                </div>
+            </section>
+
+            <!-- قسم المنتجات -->
+            <section class="brand-products-section korean-cars-products-section"> <!-- تم إضافة فئة -->
+                <div class="section-header">
+                    <h2 class="section-title h2-style">منتجات هيونداي وكيا</h2> <!-- تم التعديل -->
+                    <a href="products.html?brand=korean-cars" class="view-all-link"> <!-- تم التعديل -->
+                        مشاهدة جميع منتجات السيارات الكورية <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="brand-filters korean-cars-filters"> <!-- تم إضافة فئة -->
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">جميع المنتجات</button>
+                        <button class="filter-tab" data-filter="elantra">إلنترا</button>
+                        <button class="filter-tab" data-filter="sonata">سوناتا</button>
+                        <button class="filter-tab" data-filter="cerato">سيراتو</button>
+                        <button class="filter-tab" data-filter="sportage">سبورتاج</button>
+                    </div>
+                </div>
+
+                <div class="products-grid brand-products-grid" id="korean-cars-products-container"> <!-- تم تعديل ID -->
+                    <!-- سيتم ملء المنتجات بواسطة JavaScript -->
+                </div>
+            </section>
+
+            <!-- قسم المزايا -->
+            <section class="brand-features-section korean-cars-features-section section-padding"> <!-- تم إضافة فئة -->
+                <div class="section-header text-center">
+                    <h2 class="section-title h2-style">لماذا MOWAFFARCAR هو خيارك لقطع السيارات الكورية؟</h2> <!-- تم التعديل -->
+                </div>
+                <div class="features-grid">
+                    <!-- ... (نفس بطاقات المزايا، يمكن تخصيصها) ... -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <!-- الجزء العلوي من التذييل (يحتوي على الأعمدة) -->
+        <div class="footer-top-area section-padding"> <!-- section-padding فئة مساعدة للحشو -->
+            <div class="container">
+                <div class="footer-columns-grid">
+
+                    <!-- العمود الأول: الشعار ونبذة وروابط التواصل -->
+                    <div class="footer-column">
+                        <div class="footer-logo-wrapper">
+                            <a href="index.html">
+                                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR"loading="lazy">
+                            </a>
+                        </div>
+                        <p class="footer-about-text">
+                            MOWAFFARCAR هو متجرك الأول لإكسسوارات السيارات عالية الجودة. نسعى لتقديم أفضل المنتجات والخدمات لعملائنا.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="#" target="_blank" aria-label="فيسبوك MOWAFFARCAR" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank" aria-label="تويتر MOWAFFARCAR" title="تويتر"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" aria-label="انستغرام MOWAFFARCAR" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank" aria-label="يوتيوب MOWAFFARCAR" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- العمود الثاني: روابط مهمة -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">روابط مهمة</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="about-us.html">من نحن</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                            <li><a href="products.html">جميع المنتجات</a></li>
+                            <li><a href="blog.html">المدونة</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- العمود الثالث: خدمة العملاء -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">خدمة العملاء</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                            <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                            <li><a href="returns-policy.html">سياسة الإرجاع</a></li>
+                            <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                            <li><a href="terms-of-service.html">شروط الخدمة</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- العمود الرابع: معلومات الاتصال -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">تواصل معنا</h4>
+                        <ul class="footer-contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>شارع النهضة، صنعاء، اليمن</span></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+967776040888">967776040888+</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:musilhalqhem@gmail.com">musilhalqhem@gmail.com</a></li>
+                        </ul>
+                        <!-- يمكنك إضافة شعارات الدفع هنا إذا أردت -->
+                         <div class="footer-payment-icons">
+                            <span class="p5-style">طرق الدفع المقبولة:</span>
+                            <img src="images/payment/visa1.png" alt=" ام فلوس"loading="lazy">
+                            <img src="images/payment/visa2.jpg" alt="فلوسك"loading="lazy">
+                            <img src="images/payment/visa4.png" alt="محفظة جيب"loading="lazy">
+                            <img src="images/payment/visa5.png" alt="محفظة جوالي"loading="lazy">
+                            <!-- أضف المزيد من أيقونات الدفع هنا -->
+                        </div>
+                    </div>
+
+                </div> <!-- نهاية .footer-columns-grid -->
+            </div> <!-- نهاية .container -->
+        </div> <!-- نهاية .footer-top-area -->
+
+        <!-- الجزء السفلي من التذييل (حقوق النشر) -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <p class="copyright-text">© <span id="footer-current-year"></span> MOWAFFARCAR. جميع الحقوق محفوظة.</p>
+                <!-- يمكنك إضافة روابط إضافية هنا مثل "تصميم بواسطة..." -->
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="back-to-top-button" id="backToTopButton" title="العودة إلى الأعلى">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script src="js/korean-cars-page.js"></script> <!-- ملف JavaScript خاص بصفحة السيارات الكورية -->
+   
+</body>
+</html>

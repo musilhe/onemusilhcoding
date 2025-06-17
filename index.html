@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOWAFFARCAR - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+        /* CSS الخاص بالـ Preloader هنا مباشرة */
+        .preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #fff; /* أو var(--bg-white) إذا تم تعريفه قبل */
+            z-index: 9999; display: flex; justify-content: center; align-items: center;
+            opacity: 1; visibility: visible;
+            /* لا تضع transition هنا إذا كان inline، ضعه في ملف CSS الخارجي */
+        }
+        .preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; /* لمنع أي تفاعل عند الإخفاء */ }
+        .preloader-car-animation { width: 150px; height: auto; }
+        .preloader .loading-text { margin-top: 20px; font-size: 16px; color: #3E3E3E; }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <video src="images/preloader/car-burnout.gif"  alt="جاري تحميل الموقع..." loading="lazy" class="preloader-car-animation">
+        <p class="loading-text">لحظات وننطلق...</p>
+    </div>
+    <!-- ... -->
+    <!-- أ. الشريط العلوي الثابت (Top Bar) -->
+     <!-- حاوية الرأسية الثابتة -->
+      <div class="sticky-header-wrapper">
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#">محدد موقع المتجر</a>
+                <a href="order-tracking.html">تتبع الطلب</a>
+                <a href="faq.html">الأسئلة الشائعة</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="language-selector">
+                    <a href="#" class="active-lang">العربية</a> | <a href="#">ENG</a>
+                </div>
+                <div class="currency-selector">
+                    <span>USD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= الرأسية الرئيسية (Main Header) ======================= -->
+  
+<header class="main-header">
+    <div class="container">
+        
+        <!-- شعار الموقع: PORICAR -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR.svg" loading="lazy">
+                <!-- يمكنك إضافة اسم الموقع كنص إذا لم يكن مدمجًا بالكامل في صورة الشعار -->
+                <!-- <span class="logo-text">PORICAR</span> -->
+            </a>
+        </div>
+
+        <!-- شريط البحث -->
+        <div class="header-search">
+            <form action="search-results.html" method="GET" class="search-form">
+                <div class="search-category-select">
+                    <select name="category" id="search-category">
+                        <option value="all">جميع الفئات</option>
+                        <option value="body-parts">اكسسوارات داخلية </option>
+                        <option value="engine">اكسسوارات خارجية</option>
+                        <option value="electronics">إلكترونيات</option>
+                        <option value="various-products">منتجات متنوعة</option>
+                        <!-- أضف المزيد من الفئات -->
+                    </select>
+                    <i class="fa-solid fa-angle-down select-arrow"></i> <!-- أيقونة للسهم المنسدل -->
+                </div>
+                <input type="search" name="query" placeholder="ابحث عن منتجات، ماركات، أو أرقام قطع..." class="search-input">
+                <button type="submit" class="btn btn-secondary btn-md search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <!-- <span>بحث</span> يمكنك إظهار كلمة "بحث" إذا كان هناك مساحة كافية -->
+                </button>
+            </form>
+        </div>
+
+        <!-- إجراءات الرأسية (الهاتف، الرغبات، السلة، المستخدم) -->
+        <div class="header-actions">
+            <a href="tel:967776040888+" class="action-item phone-link">
+                <i class="fa-solid fa-phone-volume"></i>
+                <div class="action-text">
+                    <span>اتصل بنا الآن</span>
+                    <strong>967776040888+</strong>
+                </div>
+            </a>
+            <a href="wishlist.html" class="action-item">
+                <i class="fa-regular fa-heart"></i>
+                <span class="badge">3</span>
+            </a>
+            <a href="cart.html" class="action-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge">2</span>
+            </a>
+            <a href="account.html" class="action-item">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </div>
+</header>
+</div>
+<!-- نهاية sticky-header-wrapper -->
+<!-- نهاية الرأسية الرئيسية -->
+   
+    <!-- ======================= شريط التنقل الرئيسي (Main Navigation) ======================= -->
+    <nav class="main-navigation">
+        <div class="container">
+            <div class="nav-left">
+                <button class="browse-categories-btn btn btn-primary btn-md"  
+                aria-expanded="false" 
+            aria-controls="main-nav-links">
+                    
+                    <i class="fa-solid fa-bars"></i>
+                    <span>تصفح الفئات</span>
+                </button>
+                <ul class="nav-links" id="main-nav-links">
+                    <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="products.html" class="nav-link">المتجر</a></li>
+                    <li><a href="about-us.html" class="nav-link">من نحن</a></li>
+                    <li><a href="blog.html" class="nav-link">المدونة</a></li>
+                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                 <span class="nav-promo-text">شحن مجاني للطلبات فوق 50$!</span> 
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================= المحتوى الرئيسي للصفحة ======================= -->
+    <main>
+        <!-- قسم البطل -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">أفضل إكسسوارات السيارات من <span class="brand-name">MOWAFFARCAR</span></h1>
+                <p class="hero-subtitle p2-style">جودة عالية، أسعار تنافسية، وكل ما تحتاجه لسيارتك في مكان واحد!</p>
+                <a href="products.html" class="btn btn-primary btn-lg hero-cta-button">
+                    اكتشف منتجاتنا <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- قسم منتجات العروض الساخنة -->
+        <section class="hot-deals-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title h2-style">عروض <span class="brand-name">MOWAFFARCAR</span> الحصرية</h2>
+                    <a href="deals.html" class="view-all-link">
+                        مشاهدة كل العروض <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="products-grid hot-deals-grid">
+                    <!-- ... بطاقات منتجات العروض الساخنة ... -->
+                     <!-- بطاقة المنتج 1 (مثال) -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=1"> <img src="images/products/product-deal-1.png" alt="ترهيم صالون لند كروزر"loading="lazy"></a>
+                            <span class="discount-badge">-25%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style"> تراهيم خارجية </span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=1">ترهيم صالون لند كروزر من 2010 الي 2023</a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(35)</span></div>
+                            <div class="product-price"><span class="current-price">$15.00</span><span class="original-price">$20.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2024-12-31T23:59:59">
+                                <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=1" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                    <!-- بطاقة المنتج 2 (مثال) -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-2.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                            <span class="discount-badge">-15%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                    <!-- بطاقة المنتج 3 (مثال) -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-3.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                            <span class="discount-badge">-15%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                    <!-- بطاقة المنتج 4 (مثال) -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-4.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                            <span class="discount-badge">-15%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                    <!-- بطاقة المنتج 5 (مثال) -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-5.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                            <span class="discount-badge">-15%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                    <!-- بطاقة المنتج 6 (مثال) -->
+                    <div class="product-card">
+                   <div class="product-image-wrapper">
+                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-6.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                            <span class="discount-badge">-15%</span>
+                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                            </div>
+                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات الأكثر مبيعًا -->
+        <section class="best-sellers-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title h2-style">الأكثر مبيعًا في <span class="brand-name">MOWAFFARCAR</span></h2>
+                    <a href="products.html?sort=best-selling" class="view-all-link">
+                        عرض الكل <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="swiper best-sellers-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- ... بطاقات منتجات الأكثر مبيعًا ... -->
+                        <div class="swiper-slide"><div class="product-card"> <div class="product-image-wrapper"><a href="product-detail.html?id=3"><img src="images/products/bestseller-1.png" alt="غطاء سيارة مقاوم للماء والغبار"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إكسسوارات خارجية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=3">غطاء سيارة مقاوم للماء والغبار</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(105)</span></div><div class="product-price"><span class="current-price">$25.99</span></div><a href="cart.html?add-to-cart=3" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=4"><img src="images/products/bestseller-2.png" alt="شاحن بطارية سيارة محمول"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أدوات طوارئ</span><h3 class="product-title h5-style"><a href="product-detail.html?id=4">شاحن بطارية سيارة محمول (Jump Starter)</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(210)</span></div><div class="product-price"><span class="current-price">$49.50</span></div><a href="cart.html?add-to-cart=4" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=5"><img src="images/products/bestseller-3.png" alt="وسادة مقعد طبية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=5">وسادة مقعد طبية لدعم الظهر</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(88)</span></div><div class="product-price"><span class="current-price">$18.75</span></div><a href="cart.html?add-to-cart=5" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=6"><img src="images/products/bestseller-4.jpg" alt="حامل هاتف مغناطيسي"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إلكترونيات السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=6">حامل هاتف مغناطيسي للسيارة</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(150)</span></div><div class="product-price"><span class="current-price">$9.99</span></div><a href="cart.html?add-to-cart=6" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                      <div class="swiper-slide"><div class="product-card"> <div class="product-image-wrapper"><a href="product-detail.html?id=3"><img src="images/products/bestseller-5.png" alt="غطاء سيارة مقاوم للماء والغبار"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إكسسوارات خارجية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=3">غطاء سيارة مقاوم للماء والغبار</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(105)</span></div><div class="product-price"><span class="current-price">$25.99</span></div><a href="cart.html?add-to-cart=3" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=4"><img src="images/products/bestseller-6.png" alt="شاحن بطارية سيارة محمول"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أدوات طوارئ</span><h3 class="product-title h5-style"><a href="product-detail.html?id=4">شاحن بطارية سيارة محمول (Jump Starter)</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(210)</span></div><div class="product-price"><span class="current-price">$49.50</span></div><a href="cart.html?add-to-cart=4" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=5"><img src="images/products/bestseller-7.png" alt="وسادة مقعد طبية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=5">وسادة مقعد طبية لدعم الظهر</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(88)</span></div><div class="product-price"><span class="current-price">$18.75</span></div><a href="cart.html?add-to-cart=5" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=6"><img src="images/products/bestseller-8.png" alt="حامل هاتف مغناطيسي"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إلكترونيات السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=6">حامل هاتف مغناطيسي للسيارة</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(150)</span></div><div class="product-price"><span class="current-price">$9.99</span></div><a href="cart.html?add-to-cart=6" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+     
+        <!-- لافتة ترويجية -->
+        <section class="promo-banner-section section-padding">
+            <div class="container">
+                <div class="promo-banner-content">
+                    <div class="promo-banner-image">
+                        <img src="images/promo/promo-banner-image.jpg" alt="منتج مميز في العرض الترويجي"loading="lazy">
+                    </div>
+                    <div class="promo-banner-text">
+                        <h2 class="promo-title h2-style">خصم <span class="highlight">25%</span> افضل شاشات اندرويد مع الديكور والكاميرا!</h2>
+                        <p class="promo-description p3-style">
+                            أفضل أداء وأمان لسيارتك. لا تفوت الفرصة، العرض لفترة محدودة.
+                            MOWAFFARCAR يوفر لك الأفضل دائمًا.
+                        </p>
+                        <a href="products.html?category=tires&brand=michelin" class="btn btn-primary btn-lg promo-cta-button">
+                            تسوق الإطارات الآن <i class="fa-solid fa-tags"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+        <!-- قسم استكشف حسب الفئة -->
+        <section class="explore-categories-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title h2-style">تصفح <span class="brand-name">MOWAFFARCAR</span> حسب الفئة</h2>
+                </div>
+                <div class="categories-grid">
+                    <!-- ... بطاقات الفئات ... -->
+                    <a href="products.html?category=interior-accessories" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-car-seat"></i></div><h3 class="category-card-title h6-style">إكسسوارات داخلية</h3></a>
+                    <a href="products.html?category=exterior-accessories" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-car-side"></i></div><h3 class="category-card-title h6-style">إكسسوارات خارجية</h3></a>
+                    <a href="products.html?category=car-care" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-pump-soap"></i></div><h3 class="category-card-title h6-style">العناية بالسيارة</h3></a>
+                    <a href="products.html?category=electronics" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-microchip"></i></div><h3 class="category-card-title h6-style">إلكترونيات السيارة</h3></a>
+                    <a href="products.html?category=performance-parts" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-gauge-high"></i></div><h3 class="category-card-title h6-style">قطع الأداء</h3></a>
+                    <a href="products.html?category=tools-equipment" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-wrench"></i></div><h3 class="category-card-title h6-style">الأدوات والمعدات</h3></a>
+                </div>
+            </div>
+        </section>
+      
+        <!-- قسم المنتجات الشائعة -->
+        <section class="popular-products-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title h2-style">منتجات <span class="brand-name">MOWAFFARCAR</span> الشائعة</h2>
+                    <a href="products.html" class="view-all-link">
+                        تصفح جميع المنتجات <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="products-grid popular-products-grid">
+                    <!-- ... بطاقات المنتجات الشائعة (6 بطاقات) ... -->
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=7"><img src="images/products/popular-1.png" alt="طقم مصابيح LED أمامية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إضاءة السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=7">طقم مصابيح LED أمامية فائقة السطوع</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(78)</span></div><div class="product-price"><span class="current-price">$35.00</span></div><a href="cart.html?add-to-cart=7" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=8"><img src="images/products/popular-2.png" alt="مضخم صوت للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">نظام الصوت</span><h3 class="product-title h5-style"><a href="product-detail.html?id=8">مضخم صوت للسيارة 1200 واط</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(92)</span></div><div class="product-price"><span class="current-price">$89.90</span></div><a href="cart.html?add-to-cart=8" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=9"><img src="images/products/popular-3.png" alt="طقم دواسات سيارة مطاطية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أغطية الأرضيات</span><h3 class="product-title h5-style"><a href="product-detail.html?id=9">طقم دواسات سيارة مطاطية لجميع الفصول</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(120)</span></div><div class="product-price"><span class="current-price">$22.50</span></div><a href="cart.html?add-to-cart=9" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=10"><img src="images/products/popular-4.png" alt="كاميرا داش كام أمامية وخلفية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أمان وحماية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=10">كاميرا داش كام أمامية وخلفية HD</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(65)</span></div><div class="product-price"><span class="current-price">$55.00</span></div><a href="cart.html?add-to-cart=10" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=11"><img src="images/products/popular-5.png" alt="منظم صندوق السيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">تنظيم وتخزين</span><h3 class="product-title h5-style"><a href="product-detail.html?id=11">منظم صندوق السيارة متعدد الجيوب قابل للطي</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(95)</span></div><div class="product-price"><span class="current-price">$19.99</span></div><a href="cart.html?add-to-cart=11" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=12"><img src="images/products/popular-6.jpg" alt="معطر جو للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=12">معطر جو للسيارة بتقنية النانو يدوم طويلاً</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(110)</span></div><div class="product-price"><span class="current-price">$7.50</span></div><a href="cart.html?add-to-cart=12" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- عرض دائري لشعارات العلامات التجارية -->
+        <section class="brand-logos-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 20px;">
+                    <h2 class="section-title h2-style">شركاؤنا وعلاماتنا التجارية</h2>
+                </div>
+                <div class="swiper brand-logos-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- ... شعارات العلامات التجارية ... -->
+                        <div class="swiper-slide"> <a href="products.html?brand=bosch" class="brand-logo-item" title="منتجات Toyota"><img src="images/brands/brand1.jpg" alt="شعار Toyota"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=michelin" class="brand-logo-item" title="منتجات mercedes"><img src="images/brands/brand2.jpg" alt="شعار mercedes"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=castrol" class="brand-logo-item" title="منتجات hyundai"><img src="images/brands/brand3.jpg" alt="شعار hyundai"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=valvoline" class="brand-logo-item" title="منتجات lexlis"><img src="images/brands/brand4.jpg" alt="شعار lexlis"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=denso" class="brand-logo-item" title="منتجات kia"><img src="images/brands/brand5.jpg" alt="شعار kia"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=ngk" class="brand-logo-item" title="منتجات suzuki"><img src="images/brands/brand6.jpg" alt="شعار suzuki"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=philips-automotive" class="brand-logo-item" title="منتجات honda"><img src="images/brands/brand7.jpg" alt="شعار honda"loading="lazy"></a></div>
+                        <div class="swiper-slide"> <a href="products.html?brand=brembo" class="brand-logo-item" title="منتجات nissan"><img src="images/brands/brand8.jpg" alt="شعار nissan"loading="lazy"></a></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+         <!-- نهاية قسم عرض دائري لشعارات العلامات التجارية -->
+
+    <!-- ======================= قسم آراء العملاء (Customer Testimonials) ======================= -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title h2-style">ماذا يقول عملاؤنا عن <span class="brand-name">MOWAFFARCAR</span></h2>
+                <p class="section-subtitle p3-style">نفخر بثقتكم ونسعى دائمًا لتقديم الأفضل.</p>
+            </div>
+
+            <div class="swiper testimonials-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "خدمة عملاء ممتازة ومنتجات ذات جودة عالية جدًا. لقد اشتريت قطع غيار لسيارتي وكانت مطابقة تمامًا للمواصفات. شكرًا MOWAFFARCAR!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-1.jpg" alt="صورة العميل أحمد"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style">أحمد خالد</h4>
+                                    <span class="author-title p5-style">مهندس ميكانيكي</span>
+                                    <div class="testimonial-rating-static"> <!-- تقييم ثابت إذا أردت عرضه -->
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 1 -->
+
+                    <!-- Slide 2 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "لقد وجدت كل ما أحتاجه لسيارتي بأسعار تنافسية. الموقع سهل التصفح والطلب وصلني في الوقت المحدد. أنصح به بشدة."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-2.jpg" alt="صورة العميلة سارة"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style">سارة عبدالله</h4>
+                                    <span class="author-title p5-style">صاحبة متجر</span>
+                                     <div class="testimonial-rating-static">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 2 -->
+
+                    <!-- Slide 3 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                         <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "تجربة شراء رائعة! فريق الدعم الفني كان متعاونًا جدًا وساعدني في اختيار القطعة المناسبة. بالتأكيد سأعود للشراء مرة أخرى."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-3.jpg" alt="صورة العميل محمد"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style">محمد علي</h4>
+                                    <span class="author-title p5-style">سائق خاص</span>
+                                     <div class="testimonial-rating-static">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 3 --> 
+                     
+                    <!-- Slide 4 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                         <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "تجربة شراء رائعة! فريق الدعم الفني كان متعاونًا جدًا وساعدني في اختيار القطعة المناسبة. بالتأكيد سأعود للشراء مرة أخرى."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-4.jpg" alt="صورة العميل محمد"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style">مصطفي</h4>
+                                    <span class="author-title p5-style"> معرض المضلعي</span>
+                                     <div class="testimonial-rating-static">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 4 -->
+                     
+                     <!-- Slide 5 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                         <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "تجربة شراء رائعة! فريق الدعم الفني كان متعاونًا جدًا وساعدني في اختيار القطعة المناسبة. بالتأكيد سأعود للشراء مرة أخرى."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-5.jpg" alt="صورة العميل محمد"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style">احمد بشير</h4>
+                                    <span class="author-title p5-style">  مكتب ايجارات</span>
+                                     <div class="testimonial-rating-static">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 5 -->
+
+                     <!-- Slide 6 - شهادة عميل (مثال) -->
+                    <div class="swiper-slide">
+                         <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text p3-style">
+                                "تجربة شراء رائعة! فريق الدعم الفني كان متعاونًا جدًا وساعدني في اختيار القطعة المناسبة. بالتأكيد سأعود للشراء مرة أخرى."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="images/avatars/avatar-6.jpg" alt="صورة العميل محمد"loading="lazy" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name h6-style"> احمد السامعي</h4>
+                                    <span class="author-title p5-style">  ورشة وسمكرة المركز الاول</span>
+                                     <div class="testimonial-rating-static">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 6 -->
+
+                     <!-- أضف المزيد من الشهادات حسب الحاجة -->
+                </div>
+                <!-- نقاط الترقيم للـ Carousel (مهمة لهذا النوع من الـ Carousel) -->
+                <div class="swiper-pagination testimonials-pagination"></div>
+                <!-- يمكن إضافة أزرار تنقل أيضًا إذا أردت -->
+                <!--
+                <div class="swiper-button-next testimonials-button-next"></div>
+                <div class="swiper-button-prev testimonials-button-prev"></div>
+                -->
+            </div>
+        </div>
+    </section>
+    <!-- نهاية قسم آراء العملاء -->
+
+      <!-- ======================= قسم مدونات MOWAFFARCAR ======================= -->
+    <section class="blog-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title h2-style">أحدث المقالات من مدونة <span class="brand-name">MOWAFFARCAR</span></h2>
+                <p class="section-subtitle p3-style">نصائح، إرشادات، وأخبار حول عالم السيارات وإكسسواراتها.</p>
+            </div>
+
+            <div class="swiper blog-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 - بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=importance-of-regular-car-maintenance">
+                                    <img src="images/blog/blog-thumb-1.jpg" alt="صيانة السيارة الدورية"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ٢٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=importance-of-regular-car-maintenance">أهمية الصيانة الدورية للسيارة: كيف تحافظ على سيارتك بأفضل حال</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                    الصيانة الدورية ليست مجرد إجراء روتيني، بل هي استثمار في سلامتك وأداء سيارتك على المدى الطويل...
+                                </p>
+                                <a href="blog-post.html?slug=importance-of-regular-car-maintenance" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 1 -->
+
+                    <!-- Slide 2 - بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=choosing-right-car-accessories">
+                                    <img src="images/blog/blog-thumb-2.jpg" alt="اختيار إكسسوارات السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٥ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> خبير السيارات</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=choosing-right-car-accessories">دليل شامل لاختيار إكسسوارات السيارة المناسبة لاحتياجاتك وميزانيتك</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                    هل تبحث عن تحسين مظهر سيارتك أو وظائفها؟ اختيار الإكسسوارات المناسبة يمكن أن يحدث فرقًا كبيرًا...
+                                </p>
+                                <a href="blog-post.html?slug=choosing-right-car-accessories" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 2 -->
+
+                    <!-- Slide 3 - بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-3.jpg" alt="تنظيف السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">أفضل 5 حيل لتنظيف سيارتك بنفسك مثل المحترفين وتوفير المال</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                    الحفاظ على نظافة سيارتك لا يتطلب دائمًا زيارة مراكز التنظيف الباهظة. اكتشف هذه الحيل البسيطة والفعالة...
+                                </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 3 -->
+
+                    <!-- Slide 4- بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-4.png" alt="فحص السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">دليل المحترفين: 7 خطوات ذهبية لفحص سيارة مستعملة قبل الشراء</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                    لا تخاطر بشراء سيارة مستعملة قبل معرفة هذه الأسرار المهنية في فحص الهيكل والمحرك...
+                                </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 4 -->
+
+                    <!-- Slide 5 - بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-5.jpg" alt="تنظيف السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">تحضيرات ضرورية لسيارتك قبل فصل الشتاء لتجنب الأعطال المفاجئة</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                      من إطارات الشتاء إلى سوائل التبريد، دليل كامل للحفاظ على أداء سيارتك في البرد القارس...
+                                 </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 5 -->
+
+                    <!-- Slide 6 - بطاقة مقال (مثال) -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-6.jpg" alt="تنظيف السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">مستقبل القيادة: أحدث التقنيات في سيارات 2025 التي ستغير مفهوم التنقل</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                               من أنظمة الذكاء الاصطناعي إلى تقنيات الشحن اللاسلكي، اكتشف ما ينتظرك في عالم السيارات...
+                                 </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- نهاية Slide 6 -->
+
+                      <!-- Slide 7 - بطاقة مقال (مثال) -->
+
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-7.jpg" alt="تنظيف السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">أسرار خفية لتوفير 30% من استهلاك وقود سيارتك بدون تعديلات</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                                           كيف تقود بذكاء؟ اكتشف تقنيات القيادة الاقتصادية ونصائح صيانة بسيطة لخفض فواتير الوقود...
+                                 </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 7 -->
+
+                      <!-- نهاية Slide 8 -->
+
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                             <div class="blog-card-image-wrapper">
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks">
+                                    <img src="images/blog/blog-thumb-8.jpg" alt="تنظيف السيارة"loading="lazy">
+                                </a>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="post-date p5-style"><i class="fa-regular fa-calendar-days"></i> ١٠ مايو، ٢٠٢٥</span>
+                                    <span class="post-author p5-style"><i class="fa-regular fa-user"></i> فريق MOWAFFARCAR</span>
+                                </div>
+                                <h3 class="blog-card-title h5-style">
+                                    <a href="blog-post.html?slug=top-5-car-cleaning-hacks">محتويات لا غنى عنها في حقيبة الطوارئ السيارة لكل سائق ذكي</a>
+                                </h3>
+                                <p class="blog-card-excerpt p4-style">
+                                                     هل أنت مستعد لأي طارئ؟ قائمة بالأدوات الأساسية التي قد تنقذ حياتك في الرحلات الطويلة...
+                                 </p>
+                                <a href="blog-post.html?slug=top-5-car-cleaning-hacks" class="btn btn-outline-primary btn-sm read-more-btn">
+                                    اقرأ المزيد <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- نهاية Slide 8 -->
+
+                     <!-- أضف المزيد من المقالات حسب الحاجة -->
+                </div>
+                <!-- نقاط الترقيم و/أو أزرار التنقل للـ Carousel -->
+                <div class="swiper-pagination blog-pagination"></div>
+                <div class="swiper-button-next blog-button-next"></div>
+                <div class="swiper-button-prev blog-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نهاية قسم مدونات MOWAFFARCAR -->
+     
+     <!-- ======================= قسم الميزات (Features) ======================= -->
+<section class="features section-padding"> <!-- أضفت section-padding للحشو -->
+    <div class="container">
+        <!-- عنصر الميزة 1 -->
+        <div class="feature-item">
+            <img src="images/features/shipping-truck.png" alt="شحن سريع وموثوق"loading="lazy">
+            <div class="text">
+                <h4>شحن سريع وموثوق</h4>
+                <p>توصيل لجميع المحافظات خلال أيام قليلة.</p>
+            </div>
+        </div>
+
+        <!-- عنصر الميزة 2 -->
+        <div class="feature-item">
+            <img src="images/features/quality-parts.png" alt="جودة عالية مضمونة"loading="lazy">
+            <div class="text">
+                <h4>جودة عالية مضمونة</h4>
+                <p>أفضل قطع الغيار والإكسسوارات الأصلية.</p>
+            </div>
+        </div>
+
+        <!-- عنصر الميزة 3 -->
+        <div class="feature-item">
+            <img src="images/features/secure-payment.png" alt="دفع آمن ومتعدد"loading="lazy">
+            <div class="text">
+                <h4>دفع آمن ومتعدد</h4>
+                <p>خيارات دفع متنوعة وآمنة 100%.</p>
+            </div>
+        </div>
+
+        <!-- عنصر الميزة 4 -->
+        <div class="feature-item">
+            <img src="images/features/customer-support.png" alt="دعم فني متميز"loading="lazy">
+            <div class="text">
+                <h4>دعم فني متميز</h4>
+                <p>فريقنا جاهز لمساعدتك في أي وقت.</p>
+            </div>
+        </div>
+
+        <!-- عنصر الميزة 5 (جديد) -->
+        <div class="feature-item">
+            <img src="images/features/easy-returns.png" alt="إرجاع سهل ومرن"loading="lazy">
+            <div class="text">
+                <h4>إرجاع سهل ومرن</h4>
+                <p>سياسة إرجاع مريحة خلال 14 يومًا.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================= نهاية قسم الميزات (Features) ======================= -->
+    </main>
+    
+    <!-- نهاية المحتوى الرئيسي للصفحة -->
+
+
+    <!-- ======================= بداية التذييل (Footer) ======================= -->
+    <footer class="site-footer">
+        <!-- الجزء العلوي من التذييل (يحتوي على الأعمدة) -->
+        <div class="footer-top-area section-padding"> <!-- section-padding فئة مساعدة للحشو -->
+            <div class="container">
+                <div class="footer-columns-grid">
+
+                    <!-- العمود الأول: الشعار ونبذة وروابط التواصل -->
+                    <div class="footer-column">
+                        <div class="footer-logo-wrapper">
+                            <a href="index.html">
+                                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR"loading="lazy">
+                            </a>
+                        </div>
+                        <p class="footer-about-text">
+                            MOWAFFARCAR هو متجرك الأول لإكسسوارات السيارات عالية الجودة. نسعى لتقديم أفضل المنتجات والخدمات لعملائنا.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="#" target="_blank" aria-label="فيسبوك MOWAFFARCAR" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank" aria-label="تويتر MOWAFFARCAR" title="تويتر"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" aria-label="انستغرام MOWAFFARCAR" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank" aria-label="يوتيوب MOWAFFARCAR" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- العمود الثاني: روابط مهمة -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">روابط مهمة</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="about-us.html">من نحن</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                            <li><a href="products.html">جميع المنتجات</a></li>
+                            <li><a href="blog.html">المدونة</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- العمود الثالث: خدمة العملاء -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">خدمة العملاء</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                            <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                            <li><a href="returns-policy.html">سياسة الإرجاع</a></li>
+                            <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                            <li><a href="terms-of-service.html">شروط الخدمة</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- العمود الرابع: معلومات الاتصال -->
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">تواصل معنا</h4>
+                        <ul class="footer-contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>شارع النهضة، صنعاء، اليمن</span></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+967776040888">967776040888+</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:musilhalqhem@gmail.com">musilhalqhem@gmail.com</a></li>
+                        </ul>
+                        <!-- يمكنك إضافة شعارات الدفع هنا إذا أردت -->
+                         <div class="footer-payment-icons">
+                            <span class="p5-style">طرق الدفع المقبولة:</span>
+                            <img src="images/payment/visa1.png" alt=" ام فلوس"loading="lazy">
+                            <img src="images/payment/visa2.jpg" alt="فلوسك"loading="lazy">
+                            <img src="images/payment/visa4.png" alt="محفظة جيب"loading="lazy">
+                            <img src="images/payment/visa5.png" alt="محفظة جوالي"loading="lazy">
+                            <!-- أضف المزيد من أيقونات الدفع هنا -->
+                        </div>
+                    </div>
+
+                </div> <!-- نهاية .footer-columns-grid -->
+            </div> <!-- نهاية .container -->
+        </div> <!-- نهاية .footer-top-area -->
+
+        <!-- الجزء السفلي من التذييل (حقوق النشر) -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <p class="copyright-text">© <span id="footer-current-year"></span> MOWAFFARCAR. جميع الحقوق محفوظة.</p>
+                <!-- يمكنك إضافة روابط إضافية هنا مثل "تصميم بواسطة..." -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================= نهاية التذييل (Footer) ======================= -->
+     <!-- مكتبة Swiper JS (يجب أن تكون أولاً إذا كانت الملفات الأخرى تعتمد عليها) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- زر العودة إلى الأعلى (اختياري، يوضع قبل إغلاق body مباشرة) -->
+    <a href="#top" class="back-to-top-button" id="backToTopButton" title="العودة إلى الأعلى">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
+    
+    <!-- ======================= بداية الرسالة الترحيبية ======================= -->
+    <div class="welcome-notification-bar" id="welcomeNotification">
+        <div class="container welcome-notification-content">
+            <div class="welcome-message">
+                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR المصغر" class="welcome-logo-icon"> <!-- أو أيقونة ترحيبية أخرى -->
+                <span>حياك الله في <span class="brand-name-inline">MOWAFFARCAR</span>! اكتشف مزايا التسوق معنا.</span>
+            </div>
+            <a href="signup.html" class="btn btn-sm btn-secondary welcome-action-btn">اضغط هنا</a> <!-- أو رابط لصفحة العروض -->
+            <button class="close-notification-btn" id="closeWelcomeNotification" aria-label="إغلاق الإشعار">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- ======================= نهاية الرسالة الترحيبية ======================= -->
+
+
+   
+    
+     <!-- ملفات JavaScript المخصصة -->
+          <script src="js/swiper-init.js"></script> <!-- كود تفعيل Swiper -->
+      <script src="js/script.js"></script>
+    <script src="js/main.js"></script>       <!-- باقي الأكواد العامة -->
+    <!-- أو إذا كان ملف script.js الأصلي لديك يحتوي على وظائف أخرى، أبقِ عليه -->
+    <!-- <script src="js/script.js"></script> --> 
+
+
+</body>
+</html>
