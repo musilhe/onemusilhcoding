@@ -6,27 +6,34 @@
     <title>MOWAFFARCAR - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-crossorigin="anonymous" 
-referrerpolicy="no-referrer"/>
+           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+             crossorigin="anonymous" 
+              referrerpolicy="no-referrer"/>
+    <!-- مكتبة Swiper CSS للـ Carousels -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
-        /* CSS الخاص بالـ Preloader هنا مباشرة */
+    
+    <!-- CSS الخاص بالـ Preloader - يُفضل نقله إلى style.css -->
+    <style>
         .preloader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: #fff; /* أو var(--bg-white) إذا تم تعريفه قبل */
             z-index: 9999; display: flex; justify-content: center; align-items: center;
             opacity: 1; visibility: visible;
             /* لا تضع transition هنا إذا كان inline، ضعه في ملف CSS الخارجي */
+            transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* أضفت الانتقال هنا مبدئياً */
         }
         .preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; /* لمنع أي تفاعل عند الإخفاء */ }
         .preloader-car-animation { width: 150px; height: auto; }
         .preloader .loading-text { margin-top: 20px; font-size: 16px; color: #3E3E3E; }
     </style>
-</head>
-<body>
+    
+    <link rel="icon" type="image/png" href="/images/MOWAFFARCAR.svg" sizes="32x32">
+
+   </head>
+   <body class="homepage">
+    <!-- Preloader HTML - موجود بالفعل -->
     <div class="preloader">
-        <video src="images/preloader/car-burnout.gif"  alt="جاري تحميل الموقع..." loading="lazy" class="preloader-car-animation">
+        <video src="images/preloader/car-burnout.gif" autoplay muted loop playsinline alt="جاري تحميل الموقع..." loading="lazy" class="preloader-car-animation"></video> <!-- أضفت autoplay, muted, loop, playsinline للفيديو -->
         <p class="loading-text">لحظات وننطلق...</p>
     </div>
     <!-- ... -->
@@ -59,7 +66,7 @@ referrerpolicy="no-referrer"/>
         <!-- شعار الموقع: PORICAR -->
         <div class="logo">
             <a href="index.html">
-                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR.svg" loading="lazy">
+                <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR" loading="lazy">
                 <!-- يمكنك إضافة اسم الموقع كنص إذا لم يكن مدمجًا بالكامل في صورة الشعار -->
                 <!-- <span class="logo-text">PORICAR</span> -->
             </a>
@@ -139,8 +146,8 @@ referrerpolicy="no-referrer"/>
         </div>
     </nav>
 
-    <!-- ======================= المحتوى الرئيسي للصفحة ======================= -->
-    <main>
+    <!-- ======================= المحتوى الرئيسي للصفحة ======================= -->   
+   <main>
         <!-- قسم البطل -->
         <section class="hero-section">
             <div class="hero-overlay"></div>
@@ -158,18 +165,22 @@ referrerpolicy="no-referrer"/>
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title h2-style">عروض <span class="brand-name">MOWAFFARCAR</span> الحصرية</h2>
-                    <a href="deals.html" class="view-all-link">
+                    <a href="products.html?filter=hotdeals" class="view-all-link">
                         مشاهدة كل العروض <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
                 <div class="products-grid hot-deals-grid">
-                    <!-- ... بطاقات منتجات العروض الساخنة ... -->
-                     <!-- بطاقة المنتج 1 (مثال) -->
+                    <!-- ... بطاقات منتجات العروض الساخنة (سيتم تعديل أزرارها) ... -->
+                     <!-- بطاقة المنتج 1 (مثال مع تعديل الزر) -->
                     <div class="product-card">
                         <div class="product-image-wrapper">
                             <a href="product-detail.html?id=1"> <img src="images/products/product-deal-1.png" alt="ترهيم صالون لند كروزر"loading="lazy"></a>
                             <span class="discount-badge">-25%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
+                             <!-- أزرار الإجراءات في الـ overlay - تأكد أنها button ولها data-product-id -->
+                            <div class="product-actions-overlay">
+                                <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="1"><i class="fa-regular fa-heart"></i></button>
+                                <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="1"><i class="fa-solid fa-eye"></i></button>
+                            </div>
                         </div>
                         <div class="product-content">
                             <span class="product-category p5-style"> تراهيم خارجية </span>
@@ -182,113 +193,125 @@ referrerpolicy="no-referrer"/>
                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
                             </div>
-                            <a href="cart.html?add-to-cart=1" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
+                            <!-- زر أضف إلى السلة - تأكد أنه button وله data-product-id -->
+                            <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="1">أضف إلى السلة</button>
                         </div>
                     </div>
-                    <!-- بطاقة المنتج 2 (مثال) -->
+                    <!-- كرر نفس التعديل لجميع بطاقات المنتجات في هذا القسم -->
                     <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-2.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
-                            <span class="discount-badge">-15%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
-                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
-                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
-                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
-                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
-                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
-                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
-                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
-                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
-                            </div>
-                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
-                        </div>
+                         <div class="product-image-wrapper">
+                             <a href="product-detail.html?id=2"><img src="images/products/product-deal-2.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                             <span class="discount-badge">-15%</span>
+                             <div class="product-actions-overlay">
+                                 <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="2"><i class="fa-regular fa-heart"></i></button>
+                                 <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="2"><i class="fa-solid fa-eye"></i></button>
+                             </div>
+                         </div>
+                         <div class="product-content">
+                             <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                             <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                             <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                             <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                             <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                  <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                  <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                  <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                  <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                             </div>
+                             <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="2">أضف إلى السلة</button>
+                         </div>
                     </div>
-                    <!-- بطاقة المنتج 3 (مثال) -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-3.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
-                            <span class="discount-badge">-15%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
-                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
-                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
-                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
-                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
-                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
-                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
-                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
-                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
-                            </div>
-                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
-                        </div>
+                     <div class="product-card">
+                         <div class="product-image-wrapper">
+                             <a href="product-detail.html?id=3"><img src="images/products/product-deal-3.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                             <span class="discount-badge">-15%</span>
+                             <div class="product-actions-overlay">
+                                 <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="3"><i class="fa-regular fa-heart"></i></button>
+                                 <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="3"><i class="fa-solid fa-eye"></i></button>
+                             </div>
+                         </div>
+                         <div class="product-content">
+                             <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                             <h3 class="product-title h5-style"><a href="product-detail.html?id=3"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                             <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                             <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                             <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                  <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                  <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                  <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                  <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                             </div>
+                             <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="3">أضف إلى السلة</button>
+                         </div>
                     </div>
-                    <!-- بطاقة المنتج 4 (مثال) -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-4.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
-                            <span class="discount-badge">-15%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
-                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
-                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
-                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
-                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
-                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
-                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
-                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
-                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
-                            </div>
-                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
-                        </div>
+                     <div class="product-card">
+                         <div class="product-image-wrapper">
+                             <a href="product-detail.html?id=4"><img src="images/products/product-deal-4.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                             <span class="discount-badge">-15%</span>
+                             <div class="product-actions-overlay">
+                                 <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="4"><i class="fa-regular fa-heart"></i></button>
+                                 <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="4"><i class="fa-solid fa-eye"></i></button>
+                             </div>
+                         </div>
+                         <div class="product-content">
+                             <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                             <h3 class="product-title h5-style"><a href="product-detail.html?id=4"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                             <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                             <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                             <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                  <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                  <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                  <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                  <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                             </div>
+                             <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="4">أضف إلى السلة</button>
+                         </div>
                     </div>
-                    <!-- بطاقة المنتج 5 (مثال) -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-5.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
-                            <span class="discount-badge">-15%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
-                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
-                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
-                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
-                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
-                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
-                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
-                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
-                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
-                            </div>
-                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
-                        </div>
+                     <div class="product-card">
+                         <div class="product-image-wrapper">
+                             <a href="product-detail.html?id=5"><img src="images/products/product-deal-5.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                             <span class="discount-badge">-15%</span>
+                             <div class="product-actions-overlay">
+                                 <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="5"><i class="fa-regular fa-heart"></i></button>
+                                 <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="5"><i class="fa-solid fa-eye"></i></button>
+                             </div>
+                         </div>
+                         <div class="product-content">
+                             <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                             <h3 class="product-title h5-style"><a href="product-detail.html?id=5"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                             <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                             <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                             <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                  <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                  <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                  <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                  <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                             </div>
+                             <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="5">أضف إلى السلة</button>
+                         </div>
                     </div>
-                    <!-- بطاقة المنتج 6 (مثال) -->
-                    <div class="product-card">
-                   <div class="product-image-wrapper">
-                            <a href="product-detail.html?id=2"><img src="images/products/product-deal-6.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
-                            <span class="discount-badge">-15%</span>
-                            <div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div>
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category p5-style">زوايد امامي وخلفي</span>
-                            <h3 class="product-title h5-style"><a href="product-detail.html?id=2"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
-                            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
-                            <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
-                            <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
-                                 <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
-                                 <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
-                                 <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
-                                 <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
-                            </div>
-                            <a href="cart.html?add-to-cart=2" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a>
-                        </div>
+                     <div class="product-card">
+                         <div class="product-image-wrapper">
+                             <a href="product-detail.html?id=6"><img src="images/products/product-deal-6.png" alt="شنبات امامي وخلفي فورشنال"loading="lazy"></a>
+                             <span class="discount-badge">-15%</span>
+                             <div class="product-actions-overlay">
+                                 <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="6"><i class="fa-regular fa-heart"></i></button>
+                                 <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="6"><i class="fa-solid fa-eye"></i></button>
+                             </div>
+                         </div>
+                         <div class="product-content">
+                             <span class="product-category p5-style">زوايد امامي وخلفي</span>
+                             <h3 class="product-title h5-style"><a href="product-detail.html?id=6"> شنبات امامي وخلفي فورشنال 2021  </a></h3>
+                             <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(62)</span></div>
+                             <div class="product-price"><span class="current-price">$8.50</span><span class="original-price">$10.00</span></div>
+                             <div class="deal-countdown" data-countdown-end="2025-01-15T18:00:00">
+                                  <div class="countdown-item"><span class="days">00</span><span class="label p5-style">أيام</span></div>
+                                  <div class="countdown-item"><span class="hours">00</span><span class="label p5-style">ساعات</span></div>
+                                  <div class="countdown-item"><span class="minutes">00</span><span class="label p5-style">دقائق</span></div>
+                                  <div class="countdown-item"><span class="seconds">00</span><span class="label p5-style">ثواني</span></div>
+                             </div>
+                             <button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="6">أضف إلى السلة</button>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -305,15 +328,119 @@ referrerpolicy="no-referrer"/>
                 </div>
                 <div class="swiper best-sellers-carousel">
                     <div class="swiper-wrapper">
-                        <!-- ... بطاقات منتجات الأكثر مبيعًا ... -->
-                        <div class="swiper-slide"><div class="product-card"> <div class="product-image-wrapper"><a href="product-detail.html?id=3"><img src="images/products/bestseller-1.png" alt="غطاء سيارة مقاوم للماء والغبار"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إكسسوارات خارجية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=3">غطاء سيارة مقاوم للماء والغبار</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(105)</span></div><div class="product-price"><span class="current-price">$25.99</span></div><a href="cart.html?add-to-cart=3" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=4"><img src="images/products/bestseller-2.png" alt="شاحن بطارية سيارة محمول"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أدوات طوارئ</span><h3 class="product-title h5-style"><a href="product-detail.html?id=4">شاحن بطارية سيارة محمول (Jump Starter)</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(210)</span></div><div class="product-price"><span class="current-price">$49.50</span></div><a href="cart.html?add-to-cart=4" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=5"><img src="images/products/bestseller-3.png" alt="وسادة مقعد طبية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=5">وسادة مقعد طبية لدعم الظهر</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(88)</span></div><div class="product-price"><span class="current-price">$18.75</span></div><a href="cart.html?add-to-cart=5" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=6"><img src="images/products/bestseller-4.jpg" alt="حامل هاتف مغناطيسي"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إلكترونيات السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=6">حامل هاتف مغناطيسي للسيارة</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(150)</span></div><div class="product-price"><span class="current-price">$9.99</span></div><a href="cart.html?add-to-cart=6" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                      <div class="swiper-slide"><div class="product-card"> <div class="product-image-wrapper"><a href="product-detail.html?id=3"><img src="images/products/bestseller-5.png" alt="غطاء سيارة مقاوم للماء والغبار"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إكسسوارات خارجية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=3">غطاء سيارة مقاوم للماء والغبار</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(105)</span></div><div class="product-price"><span class="current-price">$25.99</span></div><a href="cart.html?add-to-cart=3" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=4"><img src="images/products/bestseller-6.png" alt="شاحن بطارية سيارة محمول"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أدوات طوارئ</span><h3 class="product-title h5-style"><a href="product-detail.html?id=4">شاحن بطارية سيارة محمول (Jump Starter)</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(210)</span></div><div class="product-price"><span class="current-price">$49.50</span></div><a href="cart.html?add-to-cart=4" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=5"><img src="images/products/bestseller-7.png" alt="وسادة مقعد طبية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=5">وسادة مقعد طبية لدعم الظهر</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(88)</span></div><div class="product-price"><span class="current-price">$18.75</span></div><a href="cart.html?add-to-cart=5" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
-                        <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=6"><img src="images/products/bestseller-8.png" alt="حامل هاتف مغناطيسي"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إلكترونيات السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=6">حامل هاتف مغناطيسي للسيارة</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(150)</span></div><div class="product-price"><span class="current-price">$9.99</span></div><a href="cart.html?add-to-cart=6" class="btn btn-secondary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div></div>
+                        <!-- ... بطاقات منتجات الأكثر مبيعًا (سيتم تعديل أزرارها) ... -->
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <div class="product-image-wrapper">
+                                    <a href="product-detail.html?id=3"><img src="images/products/bestseller-1.png" alt="غطاء سيارة مقاوم للماء والغبار" loading="lazy"></a>
+                                    <div class="product-actions-overlay">
+                                        <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="3"><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="3"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <span class="product-category p5-style">إكسسوارات خارجية</span>
+                                    <h3 class="product-title h5-style"><a href="product-detail.html?id=3">غطاء سيارة مقاوم للماء والغبار</a></h3>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <span class="rating-count p5-style">(105)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$25.99</span>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="3">أضف إلى السلة</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <div class="product-image-wrapper">
+                                    <a href="product-detail.html?id=4"><img src="images/products/bestseller-2.png" alt="شاحن بطارية سيارة محمول" loading="lazy"></a>
+                                    <div class="product-actions-overlay">
+                                        <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="4"><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="4"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <span class="product-category p5-style">أدوات طوارئ</span>
+                                    <h3 class="product-title h5-style"><a href="product-detail.html?id=4">شاحن بطارية سيارة محمول (Jump Starter)</a></h3>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="rating-count p5-style">(210)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$49.50</span>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="4">أضف إلى السلة</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <div class="product-image-wrapper">
+                                    <a href="product-detail.html?id=5"><img src="images/products/bestseller-3.png" alt="وسادة مقعد طبية" loading="lazy"></a>
+                                    <div class="product-actions-overlay">
+                                        <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="5"><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="5"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <span class="product-category p5-style">راحة ورفاهية</span>
+                                    <h3 class="product-title h5-style"><a href="product-detail.html?id=5">وسادة مقعد طبية لدعم الظهر</a></h3>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <span class="rating-count p5-style">(88)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$18.75</span>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="5">أضف إلى السلة</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <div class="product-image-wrapper">
+                                    <a href="product-detail.html?id=6"><img src="images/products/bestseller-4.png" alt="حامل هاتف مغناطيسي" loading="lazy"></a>
+                                    <div class="product-actions-overlay">
+                                        <button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="6"><i class="fa-regular fa-heart"></i></button>
+                                        <button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="6"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <span class="product-category p5-style">إلكترونيات السيارة</span>
+                                    <h3 class="product-title h5-style"><a href="product-detail.html?id=6">حامل هاتف مغناطيسي للسيارة</a></h3>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <span class="rating-count p5-style">(150)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$9.99</span>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="6">أضف إلى السلة</button>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="swiper-slide"><div class="product-card"> <div class="product-image-wrapper"><a href="product-detail.html?id=7"><img src="images/products/bestseller-5.png" alt="غطاء سيارة مقاوم للماء والغبار"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="7"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="7"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إكسسوارات خارجية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=7">غطاء سيارة مقاوم للماء والغبار</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(105)</span></div><div class="product-price"><span class="current-price">$25.99</span></div><button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="7">أضف إلى السلة</button></div></div></div>
+                         <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=8"><img src="images/products/bestseller-6.png" alt="شاحن بطارية سيارة محمول"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="8"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="8"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أدوات طوارئ</span><h3 class="product-title h5-style"><a href="product-detail.html?id=8">شاحن بطارية سيارة محمول (Jump Starter)</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(210)</span></div><div class="product-price"><span class="current-price">$49.50</span></div><button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="8">أضف إلى السلة</button></div></div></div>
+                         <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=9"><img src="images/products/bestseller-7.png" alt="وسادة مقعد طبية"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="9"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="9"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=9">وسادة مقعد طبية لدعم الظهر</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(88)</span></div><div class="product-price"><span class="current-price">$18.75</span></div><button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="9">أضف إلى السلة</button></div></div></div>
+                         <div class="swiper-slide"><div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=10"><img src="images/products/bestseller-8.png" alt="حامل هاتف مغناطيسي"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="10"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="10"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إلكترونيات السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=10">حامل هاتف مغناطيسي للسيارة</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(150)</span></div><div class="product-price"><span class="current-price">$9.99</span></div><button type="button" class="btn btn-secondary btn-md add-to-cart-btn" data-product-id="10">أضف إلى السلة</button></div></div></div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -321,7 +448,7 @@ referrerpolicy="no-referrer"/>
             </div>
         </section>
      
-        <!-- لافتة ترويجية -->
+        <!-- لافتة ترويجية - موجودة بالفعل -->
         <section class="promo-banner-section section-padding">
             <div class="container">
                 <div class="promo-banner-content">
@@ -340,10 +467,9 @@ referrerpolicy="no-referrer"/>
                     </div>
                 </div>
             </div>
-        </section>
-     
-        <!-- قسم استكشف حسب الفئة -->
-        <section class="explore-categories-section section-padding">
+        </section>     
+        <!-- قسم استكشف حسب الفئة - موجود بالفعل -->
+ <section class="explore-categories-section section-padding">
             <div class="container">
                 <div class="section-header text-center">
                     <h2 class="section-title h2-style">تصفح <span class="brand-name">MOWAFFARCAR</span> حسب الفئة</h2>
@@ -358,30 +484,29 @@ referrerpolicy="no-referrer"/>
                     <a href="products.html?category=tools-equipment" class="category-card"><div class="category-card-icon"><i class="fa-solid fa-wrench"></i></div><h3 class="category-card-title h6-style">الأدوات والمعدات</h3></a>
                 </div>
             </div>
-        </section>
-      
+        </section>      
         <!-- قسم المنتجات الشائعة -->
         <section class="popular-products-section section-padding">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title h2-style">منتجات <span class="brand-name">MOWAFFARCAR</span> الشائعة</h2>
-                    <a href="products.html" class="view-all-link">
+                    <a href="products.html?filter=hotdeals" class="view-all-link">
                         تصفح جميع المنتجات <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
                 <div class="products-grid popular-products-grid">
-                    <!-- ... بطاقات المنتجات الشائعة (6 بطاقات) ... -->
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=7"><img src="images/products/popular-1.png" alt="طقم مصابيح LED أمامية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إضاءة السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=7">طقم مصابيح LED أمامية فائقة السطوع</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(78)</span></div><div class="product-price"><span class="current-price">$35.00</span></div><a href="cart.html?add-to-cart=7" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=8"><img src="images/products/popular-2.png" alt="مضخم صوت للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">نظام الصوت</span><h3 class="product-title h5-style"><a href="product-detail.html?id=8">مضخم صوت للسيارة 1200 واط</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(92)</span></div><div class="product-price"><span class="current-price">$89.90</span></div><a href="cart.html?add-to-cart=8" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=9"><img src="images/products/popular-3.png" alt="طقم دواسات سيارة مطاطية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أغطية الأرضيات</span><h3 class="product-title h5-style"><a href="product-detail.html?id=9">طقم دواسات سيارة مطاطية لجميع الفصول</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(120)</span></div><div class="product-price"><span class="current-price">$22.50</span></div><a href="cart.html?add-to-cart=9" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=10"><img src="images/products/popular-4.png" alt="كاميرا داش كام أمامية وخلفية"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أمان وحماية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=10">كاميرا داش كام أمامية وخلفية HD</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(65)</span></div><div class="product-price"><span class="current-price">$55.00</span></div><a href="cart.html?add-to-cart=10" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=11"><img src="images/products/popular-5.png" alt="منظم صندوق السيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">تنظيم وتخزين</span><h3 class="product-title h5-style"><a href="product-detail.html?id=11">منظم صندوق السيارة متعدد الجيوب قابل للطي</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(95)</span></div><div class="product-price"><span class="current-price">$19.99</span></div><a href="cart.html?add-to-cart=11" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
-                    <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=12"><img src="images/products/popular-6.jpg" alt="معطر جو للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button class="btn-icon" aria-label="إضافة لقائمة الرغبات"><i class="fa-regular fa-heart"></i></button><button class="btn-icon" aria-label="عرض سريع"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=12">معطر جو للسيارة بتقنية النانو يدوم طويلاً</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(110)</span></div><div class="product-price"><span class="current-price">$7.50</span></div><a href="cart.html?add-to-cart=12" class="btn btn-primary btn-md add-to-cart-btn">أضف إلى السلة</a></div></div>
+                    <!-- ... بطاقات المنتجات الشائعة (سيتم تعديل أزرارها) ... -->
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=7"><img src="images/products/popular-1.png" alt="طقم مصابيح LED أمامية"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="7"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="7"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">إضاءة السيارة</span><h3 class="product-title h5-style"><a href="product-detail.html?id=7">طقم مصابيح LED أمامية فائقة السطوع</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(78)</span></div><div class="product-price"><span class="current-price">$35.00</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="7">أضف إلى السلة</button></div></div>
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=8"><img src="images/products/popular-2.png" alt="مضخم صوت للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="8"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="8"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">نظام الصوت</span><h3 class="product-title h5-style"><a href="product-detail.html?id=8">مضخم صوت للسيارة 1200 واط</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="rating-count p5-style">(92)</span></div><div class="product-price"><span class="current-price">$89.90</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="8">أضف إلى السلة</button></div></div>
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=9"><img src="images/products/popular-3.png" alt="طقم دواسات سيارة مطاطية"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="9"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="9"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أغطية الأرضيات</span><h3 class="product-title h5-style"><a href="product-detail.html?id=9">طقم دواسات سيارة مطاطية لجميع الفصول</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(120)</span></div><div class="product-price"><span class="current-price">$22.50</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="9">أضف إلى السلة</button></div></div>
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=10"><img src="images/products/popular-4.png" alt="كاميرا داش كام أمامية وخلفية"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="10"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="10"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">أمان وحماية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=10">كاميرا داش كام أمامية وخلفية HD</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(65)</span></div><div class="product-price"><span class="current-price">$55.00</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="10">أضف إلى السلة</button></div></div>
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=11"><img src="images/products/popular-5.png" alt="منظم صندوق السيارة"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="11"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="11"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">تنظيم وتخزين</span><h3 class="product-title h5-style"><a href="product-detail.html?id=11">منظم صندوق السيارة متعدد الجيوب قابل للطي</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count p5-style">(95)</span></div><div class="product-price"><span class="current-price">$19.99</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="11">أضف إلى السلة</button></div></div>
+                     <div class="product-card"><div class="product-image-wrapper"><a href="product-detail.html?id=12"><img src="images/products/popular-6.jpg" alt="معطر جو للسيارة"loading="lazy"></a><div class="product-actions-overlay"><button type="button" class="btn-icon add-to-wishlist-btn" aria-label="إضافة لقائمة الرغبات" data-product-id="12"><i class="fa-regular fa-heart"></i></button><button type="button" class="btn-icon quick-view-btn" aria-label="عرض سريع" data-product-id="12"><i class="fa-solid fa-eye"></i></button></div></div><div class="product-content"><span class="product-category p5-style">راحة ورفاهية</span><h3 class="product-title h5-style"><a href="product-detail.html?id=12">معطر جو للسيارة بتقنية النانو يدوم طويلاً</a></h3><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count p5-style">(110)</span></div><div class="product-price"><span class="current-price">$7.50</span></div><button type="button" class="btn btn-primary btn-md add-to-cart-btn" data-product-id="12">أضف إلى السلة</button></div></div>
                 </div>
             </div>
         </section>
         
-        <!-- عرض دائري لشعارات العلامات التجارية -->
+        <!-- عرض دائري لشعارات العلامات التجارية - موجود بالفعل -->
         <section class="brand-logos-section section-padding">
             <div class="container">
                 <div class="section-header text-center" style="margin-bottom: 20px;">
@@ -404,11 +529,10 @@ referrerpolicy="no-referrer"/>
                 </div>
             </div>
         </section>
-
          <!-- نهاية قسم عرض دائري لشعارات العلامات التجارية -->
 
     <!-- ======================= قسم آراء العملاء (Customer Testimonials) ======================= -->
-    <section class="testimonials-section section-padding">
+     <section class="testimonials-section section-padding">
         <div class="container">
             <div class="section-header text-center">
                 <h2 class="section-title h2-style">ماذا يقول عملاؤنا عن <span class="brand-name">MOWAFFARCAR</span></h2>
@@ -439,7 +563,6 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 1 -->
-
                     <!-- Slide 2 - شهادة عميل (مثال) -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
@@ -462,7 +585,6 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 2 -->
-
                     <!-- Slide 3 - شهادة عميل (مثال) -->
                     <div class="swiper-slide">
                          <div class="testimonial-card">
@@ -484,8 +606,7 @@ referrerpolicy="no-referrer"/>
                             </div>
                         </div>
                     </div>
-                    <!-- نهاية Slide 3 --> 
-                     
+                    <!-- نهاية Slide 3 -->                
                     <!-- Slide 4 - شهادة عميل (مثال) -->
                     <div class="swiper-slide">
                          <div class="testimonial-card">
@@ -508,7 +629,6 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 4 -->
-                     
                      <!-- Slide 5 - شهادة عميل (مثال) -->
                     <div class="swiper-slide">
                          <div class="testimonial-card">
@@ -531,7 +651,6 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 5 -->
-
                      <!-- Slide 6 - شهادة عميل (مثال) -->
                     <div class="swiper-slide">
                          <div class="testimonial-card">
@@ -554,23 +673,22 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 6 -->
-
-                     <!-- أضف المزيد من الشهادات حسب الحاجة -->
-                </div>
                 <!-- نقاط الترقيم للـ Carousel (مهمة لهذا النوع من الـ Carousel) -->
-                <div class="swiper-pagination testimonials-pagination"></div>
-                <!-- يمكن إضافة أزرار تنقل أيضًا إذا أردت -->
-                <!--
-                <div class="swiper-button-next testimonials-button-next"></div>
-                <div class="swiper-button-prev testimonials-button-prev"></div>
-                -->
+               <!--  
+
+                 يمكن إضافة أزرار تنقل أيضًا إذا أردت 
+                 <div class="swiper-button-next testimonials-button-next"></div>
+                <div class="swiper-button-prev testimonials-button-prev"></div>-->
+               
+                <div class="swiper-pagination testimonials-pagination">
             </div>
         </div>
-    </section>
+        </div>
+     </section>
     <!-- نهاية قسم آراء العملاء -->
 
       <!-- ======================= قسم مدونات MOWAFFARCAR ======================= -->
-    <section class="blog-section section-padding">
+     <section class="blog-section section-padding">
         <div class="container">
             <div class="section-header text-center">
                 <h2 class="section-title h2-style">أحدث المقالات من مدونة <span class="brand-name">MOWAFFARCAR</span></h2>
@@ -797,21 +915,17 @@ referrerpolicy="no-referrer"/>
                         </div>
                     </div>
                     <!-- نهاية Slide 8 -->
-
-                     <!-- أضف المزيد من المقالات حسب الحاجة -->
                 </div>
                 <!-- نقاط الترقيم و/أو أزرار التنقل للـ Carousel -->
-                <div class="swiper-pagination blog-pagination"></div>
                 <div class="swiper-button-next blog-button-next"></div>
                 <div class="swiper-button-prev blog-button-prev"></div>
             </div>
         </div>
-    </section>
-
+     </section>
     <!-- نهاية قسم مدونات MOWAFFARCAR -->
-     
-     <!-- ======================= قسم الميزات (Features) ======================= -->
-<section class="features section-padding"> <!-- أضفت section-padding للحشو -->
+
+          <!-- ======================= قسم الميزات (Features) ======================= -->
+     <section class="features section-padding"> <!-- أضفت section-padding للحشو -->
     <div class="container">
         <!-- عنصر الميزة 1 -->
         <div class="feature-item">
@@ -858,14 +972,12 @@ referrerpolicy="no-referrer"/>
             </div>
         </div>
     </div>
-</section>
-<!-- ======================= نهاية قسم الميزات (Features) ======================= -->
-    </main>
+     </section>
+    <!-- ======================= نهاية قسم الميزات (Features) ======================= -->
+     </main>
     
     <!-- نهاية المحتوى الرئيسي للصفحة -->
-
-
-    <!-- ======================= بداية التذييل (Footer) ======================= -->
+        <!-- ======================= بداية التذييل (Footer) ======================= -->
     <footer class="site-footer">
         <!-- الجزء العلوي من التذييل (يحتوي على الأعمدة) -->
         <div class="footer-top-area section-padding"> <!-- section-padding فئة مساعدة للحشو -->
@@ -946,9 +1058,7 @@ referrerpolicy="no-referrer"/>
     </footer>
 
     <!-- ======================= نهاية التذييل (Footer) ======================= -->
-     <!-- مكتبة Swiper JS (يجب أن تكون أولاً إذا كانت الملفات الأخرى تعتمد عليها) -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+    
     <!-- زر العودة إلى الأعلى (اختياري، يوضع قبل إغلاق body مباشرة) -->
     <a href="#top" class="back-to-top-button" id="backToTopButton" title="العودة إلى الأعلى">
         <i class="fa-solid fa-angle-up"></i>
@@ -968,17 +1078,33 @@ referrerpolicy="no-referrer"/>
         </div>
     </div>
     <!-- ======================= نهاية الرسالة الترحيبية ======================= -->
+ <!-- المكتبات الخارجية -->
+    <!-- Font Awesome JS (إذا كنت تحتاج لوظائف JS منها) - CSS يكفي عادة -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!-- مكتبة Swiper JS -->
+    <script src="js/scrollreveal.min.js"></script> <!-- مكتبة ScrollReveal JS -->
 
+    <!-- ملف الدوال المساعدة العامة -->
+    <script type="module" src="js/utils.js"></script> 
 
-   
-    
-     <!-- ملفات JavaScript المخصصة -->
-          <script src="js/swiper-init.js"></script> <!-- كود تفعيل Swiper -->
-      <script src="js/script.js"></script>
-    <script src="js/main.js"></script>       <!-- باقي الأكواد العامة -->
-    <!-- أو إذا كان ملف script.js الأصلي لديك يحتوي على وظائف أخرى، أبقِ عليه -->
-    <!-- <script src="js/script.js"></script> --> 
+    <!-- ملفات منطق الميزات الأساسية التي قد تستخدمها الصفحة (السلة والمفضلة) -->
+    <!-- يجب تضمينها قبل main.js لأن main.js قد يستدعي دوال تحديث الـ UI منها -->
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/wishlist.js"></script>
 
+    <!-- ملف الكود العام للموقع -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- ملفات تهيئة المكتبات التي تستخدم الدوال العامة أو منطق الصفحة -->
+     <!-- تهيئة Swiper - تأكد أن هذا الملف موجود وقمت بتعديله لاستيراد الدوال و Swiper -->
+    <script type="module" src="js/swiper-init.js"></script> 
+     <!-- تهيئة ScrollReveal - تأكد أن هذا الملف موجود وقمت بتعديله لاستيراد الدوال و ScrollReveal -->
+    <script type="module" src="js/scroll-reveal-init.js"></script> 
+
+    <!-- ملفات خاصة بصفحة معينة - لا تحتاج index.js حالياً -->
+
+    <!-- أكواد JavaScript المباشرة (Inline Scripts) - لا حاجة لها بعد نقل الدوال إلى main.js و swiper-init.js -->
+
+    <!-- ======================= نهاية تضمين ملفات JavaScript ======================= -->
 
 </body>
 </html>

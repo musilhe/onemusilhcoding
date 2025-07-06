@@ -1,5 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() { // للتأكد أن DOM جاهز
-
+// js/swiper-init.js
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Swiper === 'undefined') {
+        console.warn("Swiper library is not loaded.");
+        return;
+    }
     // تفعيل Swiper لقسم المنتجات الأكثر مبيعًا
     if (document.querySelector(".best-sellers-carousel")) {
         var bestSellersSwiper = new Swiper(".best-sellers-carousel", {

@@ -650,9 +650,10 @@ animationStyles.textContent = `
     }
 `;
 document.head.appendChild(animationStyles);
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
     // 1. وظيفة Preloader (إذا كنت تستخدمها)
+    /*
     const preloader = document.querySelector('.preloader');
     if (preloader) {
         // يمكنك استخدام window.onload إذا كنت تريد الانتظار لتحميل كل شيء بما في ذلك الصور الكبيرة
@@ -663,8 +664,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // إذا كان الانتقال في CSS الخاص بـ .preloader.hidden
         }, 500); // مثال لتأخير 0.5 ثانية
     }
+    */
 
     // 2. وظيفة لتثبيت الرأسية وتعديل حشو المحتوى
+    /*
     function stickyHeader() {
         const headerWrapper = document.querySelector('.sticky-header-wrapper');
         if (!headerWrapper) return;
@@ -678,8 +681,10 @@ document.addEventListener('DOMContentLoaded', function () {
     stickyHeader(); // استدعاء أولي
     window.addEventListener('load', stickyHeader); // إعادة الحساب بعد تحميل كل الصور
     window.addEventListener('resize', stickyHeader);
+    */
 
     // 3. وظيفة قائمة التنقل المتجاوبة (الهمبرغر)
+    /*
     const browseCategoriesBtn = document.querySelector('.browse-categories-btn');
     const navLinksMenu = document.getElementById('main-nav-links'); 
     if (browseCategoriesBtn && navLinksMenu) {
@@ -707,8 +712,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    */
 
     // 4. تفعيلات Swiper Carousels (مشروطة بوجود العنصر)
+    /* // Handled by swiper-init.js
     if (typeof Swiper !== 'undefined') { // تأكد أن مكتبة Swiper قد تم تحميلها
         if (document.querySelector(".best-sellers-carousel")) {
             var bestSellersSwiper = new Swiper(".best-sellers-carousel", {
@@ -750,15 +757,19 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.warn("Swiper library is not loaded.");
     }
+    */
 
     // 5. تحديث سنة حقوق النشر في التذييل
+    /*
     const footerCurrentYearSpan = document.getElementById('footer-current-year');
     if (footerCurrentYearSpan) {
         footerCurrentYearSpan.textContent = new Date().getFullYear();
     }
+    */
 
     // 6. وظيفة زر "العودة إلى الأعلى"
-    const backToTopBtn = document.getElementById("backToTopButton");
+    /* // Handled by main.js for #backToTopButton
+    const backToTopBtn = document.getElementById("backToTopButton"); // This targets the button main.js uses
     if (backToTopBtn) {
         window.addEventListener('scroll', function() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -772,8 +783,10 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+    */
 
     // 7. وظيفة الرسالة الترحيبية
+    /*
     const welcomeNotification = document.getElementById('welcomeNotification');
     const closeWelcomeBtn = document.getElementById('closeWelcomeNotification');
     if (welcomeNotification && closeWelcomeBtn) {
@@ -788,8 +801,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // localStorage.setItem('welcomeDismissed', 'true'); // لحفظ حالة الإغلاق
         });
     }
+    */
 
     // 8. وظيفة مؤقت العد التنازلي لقسم العروض الساخنة
+    /* // This is also present in main.js, assuming main.js is the primary handler
     const countdownElements = document.querySelectorAll('.deal-countdown');
     countdownElements.forEach(element => {
         const endTimeAttr = element.dataset.countdownEnd;
@@ -820,5 +835,6 @@ document.addEventListener('DOMContentLoaded', function () {
             secondsSpan.textContent = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
     });
+    */
 
-}); // نهاية DOMContentLoaded
+// }); // نهاية DOMContentLoaded

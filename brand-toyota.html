@@ -11,6 +11,8 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer" />
     <!-- قد تحتاج Swiper CSS هنا إذا قررت استخدام Carousel لعرض الموديلات أو المنتجات المميزة -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
+    <link rel="icon" type="image/png" href="/images/MOWAFFARCAR.svg" sizes="32x32">
+
 </head>
 <body>
     <!-- حاوية الرأسية الثابتة (انسخها من index.html أو products.html) -->
@@ -47,7 +49,7 @@ referrerpolicy="no-referrer" />
             <nav aria-label="breadcrumb" class="breadcrumbs">
                <ol>
     <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="products.html">العلامات التجارية</a></li> <!-- هذا الرابط قد يكون مربكًا -->
+    <li><a href="products.html">المتجر</a></li> <!-- هذا الرابط قد يكون مربكًا -->
     <li aria-current="page">تويوتا</li>
           </ol>
             </nav>
@@ -70,7 +72,7 @@ referrerpolicy="no-referrer" />
                     <!-- موديل 1: لاندكروزر -->
                     <a href="products.html?brand=toyota&model=landcruiser" class="model-card">
                         <div class="model-card-image">
-                            <img src="images/models/toyota/landcruiser.png" alt="تويوتا لاندكروزر">
+                            <img src="images/models/toyota/landcruiser.webp" alt="تويوتا لاندكروزر">
                         </div>
                         <h3 class="model-card-name h5-style">لاندكروزر</h3>
                         <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
@@ -79,7 +81,7 @@ referrerpolicy="no-referrer" />
                     <!-- موديل 2: برادو -->
                     <a href="products.html?brand=toyota&model=prado" class="model-card">
                         <div class="model-card-image">
-                            <img src="images/models/toyota/prado.png" alt="تويوتا برادو">
+                            <img src="images/models/toyota/prado.jpg" alt="تويوتا برادو">
                         </div>
                         <h3 class="model-card-name h5-style">برادو</h3>
                         <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
@@ -88,7 +90,7 @@ referrerpolicy="no-referrer" />
                     <!-- موديل 3: كامري -->
                     <a href="products.html?brand=toyota&model=camry" class="model-card">
                         <div class="model-card-image">
-                            <img src="images/models/toyota/camry.png" alt="تويوتا كامري">
+                            <img src="images/models/toyota/camry.jpg" alt="تويوتا كامري">
                         </div>
                         <h3 class="model-card-name h5-style">كامري</h3>
                         <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
@@ -108,7 +110,7 @@ referrerpolicy="no-referrer" />
                         <div class="model-card-image">
                             <img src="images/models/toyota/hilux.png" alt="تويوتا هايلكس">
                         </div>
-                        <h3 class="model-card-name h5-style">هايلكس</h3>
+                        <h3 class="model-card-name h5-style">هايلوكس</h3>
                         <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
                     </a>
 
@@ -120,12 +122,37 @@ referrerpolicy="no-referrer" />
                         <h3 class="model-card-name h5-style">راف فور</h3>
                         <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
                     </a>
+
+                     <!-- موديل 6: شاص -->
+                    <a href="products.html?brand=toyota&model=LandCruiserLX" class="model-card">
+                        <div class="model-card-image">
+                            <img src="images/models/toyota/LandCruiserLX.webp" alt="تويوتا لاندكروزر شاص">
+                        </div>
+                        <h3 class="model-card-name h5-style">تويوتا لاندكروزر شاص</h3>
+                        <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
+                    </a>
+                                       <!-- موديل 6: fortuner-->
+                    <a href="products.html?brand=toyota&model=fortuner" class="model-card">
+                        <div class="model-card-image">
+                            <img src="images/models/toyota/fortuner.jpg" alt="تويوتا فورشنال">
+                        </div>
+                        <h3 class="model-card-name h5-style">فورشنال</h3>
+                        <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
+                    </a>
+                     <!-- موديل 6: fortuner-->
+                    <a href="products.html?brand=toyota&model=highlander" class="model-card">
+                        <div class="model-card-image">
+                            <img src="images/models/toyota/highlander.jpg" alt="تويوتا هيلندير">
+                        </div>
+                        <h3 class="model-card-name h5-style">هيلندير</h3>
+                        <span class="model-card-cta p4-style">تصفح القطع <i class="fa-solid fa-arrow-left"></i></span>
+                    </a>
                     <!-- أضف المزيد من موديلات تويوتا حسب الحاجة -->
                 </div>
             </section>
 
             <!-- (اختياري) قسم لعرض المنتجات المميزة لعلامة تويوتا -->
-            <!-- 
+            
             <section class="featured-brand-products section-padding">
                 <div class="section-header">
                     <h2 class="section-title h3-style">منتجات مميزة لتويوتا</h2>
@@ -134,7 +161,7 @@ referrerpolicy="no-referrer" />
                     // هنا يمكن وضع بعض بطاقات .product-card لمنتجات تويوتا
                 </div>
             </section>
-            -->
+            
         </div>
     </main>
 
@@ -221,34 +248,36 @@ referrerpolicy="no-referrer" />
 
     <!-- ======================= نهاية التذييل (Footer) ======================= -->
 
-    <a href="#top" class="back-to-top-button" id="backToTopButton" title="العودة إلى الأعلى"><i class="fa-solid fa-angle-up"></i></a>
-    
-    <script src="js/script.js"></script>
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --> <!-- فقط إذا استخدمت Carousel -->
-    <script>
-        // وظيفة تثبيت الرأسية (نفس الكود من index.html)
-        function stickyHeader() {
-            const headerWrapper = document.querySelector('.sticky-header-wrapper');
-            const nextElement = headerWrapper.nextElementSibling; 
-            if (!headerWrapper || !nextElement) { return; }
-            const headerHeight = headerWrapper.offsetHeight;
-            nextElement.style.marginTop = headerHeight + 'px';
-        }
-        window.addEventListener('load', stickyHeader);
-        window.addEventListener('resize', stickyHeader);
+     <!-- ======================= بداية تضمين ملفات JavaScript ======================= -->
 
-        // وظيفة زر "العودة إلى الأعلى" (نفس الكود من index.html)
-        const backToTopBtn = document.getElementById("backToTopButton");
-        if (backToTopBtn) { /* ... */ }
+    <!-- المكتبات الخارجية -->
+    <!-- Font Awesome CSS يتم تضمينه في الرأسية <head> -->
+     <!-- مكتبة Swiper JS - إذا كنت ستستخدم Carousel هنا -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+     <script src="js/scrollreveal.min.js"></script> <!-- مكتبة ScrollReveal JS -->
 
-        // تحديث سنة حقوق النشر في التذييل (نفس الكود من index.html)
-        const footerCurrentYearSpan = document.getElementById('footer-current-year');
-        if (footerCurrentYearSpan) { /* ... */ }
+    <!-- ملف الدوال المساعدة العامة -->
+    <script type="module" src="js/utils.js"></script> 
 
-        // وظيفة قائمة التنقل المتجاوبة (نفس الكود من index.html)
-        const browseCategoriesBtn = document.querySelector('.browse-categories-btn');
-        const navLinksMenu = document.getElementById('main-nav-links');
-        if (browseCategoriesBtn && navLinksMenu) { /* ... */ }
-    </script>
+    <!-- ملفات منطق الميزات الأساسية (السلة والمفضلة) -->
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/wishlist.js"></script>
+
+    <!-- ملف الكود العام للموقع -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- ملفات خاصة بصفحة معينة - لا تحتاج لملف خاص بها حالياً -->
+     <!-- <script type="module" src="js/brand-page.js"></script> --> <!-- إذا أنشأت لاحقاً ملفاً عاماً لصفحات العلامات التجارية -->
+
+    <!-- ملفات تهيئة المكتبات -->
+     <!-- تهيئة Swiper (إذا كنت تستخدمه هنا) -->
+     <!-- <script type="module" src="js/swiper-init.js"></script> -->
+     <!-- تهيئة ScrollReveal - تأكد أن هذا الملف موجود وقمت بتعديله -->
+    <script type="module" src="js/scroll-reveal-init.js"></script>
+
+    <!-- أكواد JavaScript المباشرة - لا حاجة لها -->
+     <!-- الكود المباشر الخاص بـ stickyHeader, backToTopButton, footerCurrentYear, browseCategoriesBtn تم نقله لـ main.js -->
+
+    <!-- ======================= نهاية تضمين ملفات JavaScript ======================= -->
 </body>
 </html>

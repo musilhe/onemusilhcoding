@@ -9,10 +9,18 @@
 integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
 crossorigin="anonymous" 
 referrerpolicy="no-referrer" />
-    <!-- لا حاجة لـ Swiper CSS هنا إلا إذا كنت ستستخدم Carousel في هذه الصفحة -->
+    <!-- مكتبة Swiper CSS - إذا كنت ستستخدم Swiper لعرض منتجات (مثل منتجات مميزة في صفحة المنتجات) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+      
+    <link rel="icon" type="image/png" href="/images/MOWAFFARCAR.svg" sizes="32x32">
 </head>
 
 <body>
+     <!-- Preloader HTML - أضفته هنا ليكون متناسقاً مع الصفحة الرئيسية -->
+     <div class="preloader">
+         <video src="images/preloader/car-burnout.gif" autoplay muted loop playsinline alt="جاري تحميل الموقع..." loading="lazy" class="preloader-car-animation"></video>
+         <p class="loading-text">لحظات وننطلق...</p>
+     </div>
     <!-- حاوية الرأسية الثابتة -->
     <div class="sticky-header-wrapper">
     <div class="top-bar">
@@ -43,25 +51,25 @@ referrerpolicy="no-referrer" />
             <a href="index.html">
                 <img src="images/MOWAFFARCAR.svg" alt="شعار MOWAFFARCAR.svg" loading="lazy">
                 <!-- يمكنك إضافة اسم الموقع كنص إذا لم يكن مدمجًا بالكامل في صورة الشعار -->
-                <!-- <span class="logo-text">PORICAR</span> -->
+                <!-- <span class="logo-text">MOWAFFARCAR</span> -->
             </a>
         </div>
 
         <!-- شريط البحث -->
         <div class="header-search">
-            <form action="search-results.html" method="GET" class="search-form">
+            <form action="search-results.html" method="GET" class="search-form" id="product-page-search-form">
                 <div class="search-category-select">
                     <select name="category" id="search-category">
                         <option value="all">جميع الفئات</option>
-                        <option value="body-parts">اكسسوارات داخلية </option>
-                        <option value="engine">اكسسوارات خارجية</option>
-                        <option value="electronics">إلكترونيات</option>
+                        <option value="interior">اكسسوارات داخلية </option>
+                        <option value="exterior">اكسسوارات خارجية</option>
+                        <option value="personal">إكسسوارات شخصية</option>
                         <option value="various-products">منتجات متنوعة</option>
                         <!-- أضف المزيد من الفئات -->
                     </select>
                     <i class="fa-solid fa-angle-down select-arrow"></i> <!-- أيقونة للسهم المنسدل -->
                 </div>
-                <input type="search" name="query" placeholder="ابحث عن منتجات، ماركات، أو أرقام قطع..." class="search-input">
+                <input type="search" name="query" id="product-search-input" placeholder="ابحث عن منتجات، ماركات، أو أرقام قطع..." class="search-input">
                 <button type="submit" class="btn btn-secondary btn-md search-button">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <!-- <span>بحث</span> يمكنك إظهار كلمة "بحث" إذا كان هناك مساحة كافية -->
@@ -121,139 +129,107 @@ referrerpolicy="no-referrer" />
         </div>
     </nav>
 
-    <!-- ======================= المحتوى الرئيسي لصفحة قائمة المنتجات ======================= -->
-    <main class="page-content product-listing-page section-padding">
-        <div class="container">
-            <!-- مسار التنقل (Breadcrumbs) - اختياري -->
-            <nav aria-label="breadcrumb" class="breadcrumbs">
-                <ol>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="products.html">المتجر</a></li>
-                     <li><a href="#">إكسسوارات خارجية</a></li> 
-                    <li aria-current="page">مصابيح أمامية</li> 
-                </ol>
-            </nav>
+     <!-- المحتوى الرئيسي للصفحة -->
+     <main class="page-content product-listing-page section-padding">
+         <div class="container">
+             <!-- مسار التنقل -->
+             <nav aria-label="breadcrumb" class="breadcrumbs">
+                 <ol id="product-breadcrumb-list"> <!-- أضفت ID لسهولة التحديث بـ JS -->
+                     <li><a href="index.html">الرئيسية</a></li>
+                     <li aria-current="page">المتجر</li> <!-- هذا سيكون العنصر النشط مبدئياً -->
+                      <!-- سيتم تحديث باقي المسار بـ JS حسب الفلاتر المطبقة -->
+                 </ol>
+             </nav>
 
-            <div class="shop-layout">
-                <!-- الشريط الجانبي للفلاتر -->
-                <aside class="shop-sidebar">
-                    
+             <!-- عنوان الصفحة الرئيسي - يُفضل وضعه قبل الـ layout -->
+             <h1 class="page-title h2-style" id="page-main-title">جميع المنتجات</h1> 
+
+             <div class="shop-layout">
+                 <!-- الشريط الجانبي للفلاتر - موجود بالفعل -->
+                 <aside class="shop-sidebar">
+                     <!-- ... كود فلاتر الفئات، السعر، العلامات التجارية ... -->
+                      <!-- تأكد من وجود IDs للعناصر التي ستتفاعل معها JS: #price-min, #price-max, #price-min-value, #price-max-value, .apply-filters-btn -->
+                       <!-- وتأكد من وجود فئة active على رابط الفئة الافتراضي (جميع المنتجات) -->
+                       <!-- وأضف IDs مناسبة لقوائم العلامات التجارية والفئات إذا احتجت لتحديثها بـ JS -->
+                      
+                      <div class="filter-widget">
+                         <h3 class="widget-title-sidebar h5-style">الفئات</h3>
+                         <ul class="filter-list category-filter-list"> <!-- أضفت فئة -->
+                             <li><a href="?category=all" class="active">جميع المنتجات<span class="count">(0)</span></a></li> <!-- أضفت عدد مبدئي -->
+                             <li><a href="?category=exterior">إكسسوارات خارجية<span class="count">(0)</span></a></li>
+                             <li><a href="?category=interior">إكسسوارات داخلية<span class="count">(0)</span></a></li>
+                             <li><a href="?category=personal">إكسسوارات شخصية<span class="count">(0)</span></a></li>
+                             <li><a href="?category=tools">أدوات ومعدات<span class="count">(0)</span></a></li>
+                             <li><a href="?category=security">أمان وحماية<span class="count">(0)</span></a></li>
+                             <li><a href="?category=various">منتجات متنوعة<span class="count">(0)</span></a></li>
+                         </ul>
+                     </div>
                      <div class="filter-widget">
-                        <h3 class="widget-title-sidebar h5-style">الفئات</h3>
-                        <ul class="filter-list">
-                            <li><a href="?category=interior">إكسسوارات داخلية <span class="count">(25)</span></a></li>
-                            <li><a href="?category=exterior" class="active">إكسسوارات خارجية <span class="count">(42)</span></a></li>
-                            <li><a href="?category=electronics">إلكترونيات <span class="count">(70)</span></a></li>
-                            <li><a href="?category=various-products">منتجات متنوعة <span class="count">(32)</span></a></li>
-                            <li><a href="?category=decor">ديكورات داخلية <span class="count">(100)</span></a></li>
-                            <li><a href="?category=personal">اكسسورارت شخصية <span class="count">(44)</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="filter-widget">
-                        <h3 class="widget-title-sidebar h5-style">السعر</h3>
-                        <div class="price-range-filter">
-                            <input type="range" id="price-min" name="price-min" min="0" max="1000" value="50">
-                            <input type="range" id="price-max" name="price-max" min="0" max="1000" value="500">
-                            <div class="price-values">
-                                <span>$<output id="price-min-value">50</output></span> - <span>$<output id="price-max-value">500</output></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- داخل <aside class="shop-sidebar"> -->
-<div class="filter-widget">
-    <h3 class="widget-title-sidebar h5-style">العلامات التجارية</h3>
-    <ul class="filter-list brand-filter-links"> <!-- يمكنك استخدام هذا الكلاس لتنسيق خاص إذا أردت -->
-        <li>
-            <a href="brand-toyota.html">تايوتا <span class="count">(75)</span></a>
-        </li>
-        <li>
-            <a href="brand-lexus.html"> لكزس <span class="count">(60)</span></a>
-        </li>
-        <li>
-            <a href="brand-korean-cars.html">هيونداي وكيا <span class="count">(82)</span></a>
-        </li>
-       
-        <!-- أضف المزيد من العلامات التجارية كروابط لصفحاتها الخاصة -->
-        <li>
-            <a href="products.html">جميع المنتجات</a> <!-- رابط للعودة لعرض كل شيء -->
-        </li>
-    </ul>
-</div>
-           
-                    <button class="btn btn-primary btn-md apply-filters-btn">تطبيق الفلاتر</button>
-                </aside>
+                         <h3 class="widget-title-sidebar h5-style">السعر</h3>
+                         <div class="price-range-filter">
+                             <input type="range" id="price-min" name="price-min" min="0" max="1000" value="0"> <!-- قيمة افتراضية min=0 -->
+                             <input type="range" id="price-max" name="price-max" min="0" max="1000" value="1000"> <!-- قيمة افتراضية max=1000 -->
+                             <div class="price-values">
+                                 <span>$<output id="price-min-value">0</output></span> - <span>$<output id="price-max-value">1000</output></span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="filter-widget">
+                         <h3 class="widget-title-sidebar h5-style">العلامات التجارية</h3>
+                         <ul class="filter-list brand-filter-list"> <!-- أضفت فئة -->
+                              <!-- سيتم ملؤها بـ JS لاحقاً إذا أردت -->
+                             <li><a href="?brand=Toyota">تايوتا <span class="count">(0)</span></a></li>
+                             <li><a href="?brand=Lexus">لكزس <span class="count">(0)</span></a></li>
+                             <li><a href="?brand=HyundaiKia">هيونداي وكيا <span class="count">(0)</span></a></li> <!-- استخدم اسم موحد في البيانات -->
+                              <li><a href="products.html">جميع العلامات التجارية</a></li> <!-- رابط للعودة لعرض كل شيء -->
+                         </ul>
+                     </div>
 
-                <!-- منطقة عرض المنتجات الرئيسية -->
-                <section class="shop-main-content">
-                    <div class="shop-toolbar">
-                        <p class="results-count">عرض 1-12 من 85 نتيجة</p> <!-- هذا سيحتاج لتحديث ديناميكي أيضًا -->
-                        <div class="sort-options">
-                            <label for="sort-by">الفرز حسب:</label>
-                            <select name="sort-by" id="sort-by" class="input-base input-sm">
-                                <option value="default">الافتراضي</option>
-                                <option value="price-asc">السعر: من الأقل للأعلى</option>
-                                <option value="price-desc">السعر: من الأعلى للأقل</option>
-                                <option value="latest">الأحدث</option>
-                                <option value="rating">الأعلى تقييمًا</option>
-                            </select>
-                        </div>
-                    </div>
+                     <button class="btn btn-primary btn-md apply-filters-btn">تطبيق الفلاتر</button>
+                 </aside>
 
-                    <!-- حاوية المنتجات التي سيتم ملؤها بواسطة JavaScript -->
-                    <div class="products-grid shop-products-grid" id="shop-products-container">
-                        <!-- البطاقات سيتم إنشاؤها هنا -->
-                    </div>                
-                </section>
-            </div> <!-- نهاية .shop-layout -->
-        </div> <!-- نهاية .container -->
-    </main>
-    <!-- نهاية المحتوى الرئيسي -->
+                 <!-- منطقة عرض المنتجات الرئيسية -->
+                 <section class="shop-main-content">
+                     <div class="shop-toolbar">
+                         <p class="results-count">عرض 0-0 من 0 نتيجة</p> <!-- هذا سيحتاج لتحديث ديناميكي بواسطة JS -->
+                         <div class="sort-options">
+                             <label for="sort-by">الفرز حسب:</label>
+                             <select name="sort-by" id="sort-by" class="input-base input-sm">
+                                 <option value="default">الافتراضي</option>
+                                 <option value="price-asc">السعر: من الأقل للأعلى</option>
+                                 <option value="price-desc">السعر: من الأعلى للأقل</option>
+                                 <option value="latest">الأحدث</option>
+                                 <option value="rating">الأعلى تقييمًا</option>
+                             </select>
+                         </div>
+                     </div>
 
-  
-        <div class="container">
-            <h1 class="page-title h2-style" id="page-main-title">جميع المنتجات</h1> <!-- أو اسم الفئة -->
+                     <!-- حاوية المنتجات التي سيتم ملؤها بواسطة JavaScript -->
+                     <div class="products-grid shop-products-grid" id="shop-products-container">
+                         <!-- البطاقات سيتم إنشاؤها هنا بواسطة JS -->
+                         <!-- يمكنك وضع placeholder تحميل هنا مبدئياً -->
+                          <div class="loading-placeholder" style="grid-column: 1 / -1; text-align: center; padding: 50px;">
+                              <p>جاري تحميل المنتجات...</p>
+                          </div>
+                     </div>
 
-            <!-- (هنا ستكون الفلاتر وشبكة المنتجات لاحقًا) -->
-            <div class="products-grid-placeholder" style="height: 400px; background-color: #eee; display:flex; align-items:center; justify-content:center; margin-bottom:30px;">
-                <p>منطقة عرض المنتجات</p>
-            </div>
+                     <!-- منطقة ترقيم الصفحات - موجودة بالفعل، ستتم إدارتها بواسطة JS -->
+                      <!-- تم نقلها داخل shop-main-content لتبقى في العمود الرئيسي -->
+                     <nav class="pagination-area" aria-label="ترقيم صفحات المنتجات">
+                          <ul class="pagination">
+                              <!-- سيتم ملؤها بواسطة JS -->
+                          </ul>
+                      </nav>
 
 
-            <!-- ======================= بداية منطقة ترقيم الصفحات ======================= -->
-            <nav class="pagination-area" aria-label="ترقيم صفحات المنتجات">
-                <ul class="pagination">
-                    <!-- زر السابق -->
-                    <li class="page-item disabled"> <!-- أضف "disabled" إذا كانت الصفحة الأولى -->
-                        <a class="page-link" href="#" aria-label="السابق">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                    </li>
+                 </section>
+             </div> <!-- نهاية .shop-layout -->
+         </div> <!-- نهاية .container -->
+     </main>
+     <!-- نهاية المحتوى الرئيسي -->
 
-                    <!-- أرقام الصفحات -->
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    
-                    <!-- نقاط (إذا كان هناك صفحات كثيرة) -->
-                    <li class="page-item disabled"><span class="page-link">...</span></li> 
-                    
-                    <li class="page-item"><a class="page-link" href="#">10</a></li>
 
-                    <!-- زر التالي -->
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="التالي">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- ======================= نهاية منطقة ترقيم الصفحات ======================= -->
-
-        </div>
-    </main>
-    <!-- التذييل -->
+   <!-- التذييل -->
      <footer class="site-footer">
         <!-- الجزء العلوي من التذييل (يحتوي على الأعمدة) -->
         <div class="footer-top-area section-padding"> <!-- section-padding فئة مساعدة للحشو -->
@@ -332,16 +308,40 @@ referrerpolicy="no-referrer" />
             </div>
         </div>
     </footer>
-
     <a href="#top" class="back-to-top-button" id="backToTopButton" title="العودة إلى الأعلى">
         <i class="fa-solid fa-angle-up"></i>
     </a>
+    <!-- ======================= بداية تضمين ملفات JavaScript ======================= -->
 
-    <!-- Swiper JS غير ضروري هنا إلا إذا كان هناك Carousel -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script> <!-- الملف الرئيسي المشترك -->
-<script src="js/products.js"></script> <!-- الملف الخاص بصفحة products.html --> 
-   
+    <!-- المكتبات الخارجية -->
+    <!-- Font Awesome CSS يتم تضمينه في الرأسية <head> -->
+    <!-- مكتبة Swiper JS - إذا كنت ستستخدم Swiper هنا -->
+     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="js/scrollreveal.min.js"></script> <!-- مكتبة ScrollReveal JS -->
+
+
+    <!-- ملف الدوال المساعدة العامة -->
+    <script type="module" src="js/utils.js"></script> 
+
+    <!-- ملفات منطق الميزات الأساسية (السلة والمفضلة) -->
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/wishlist.js"></script>
+
+    <!-- ملف الكود العام للموقع -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- ملفات خاصة بصفحة معينة -->
+    <script type="module" src="js/products.js"></script> <!-- منطق صفحة المنتجات -->
+
+    <!-- ملفات تهيئة المكتبات -->
+    <!-- تهيئة Swiper (إذا كنت تستخدمه هنا) -->
+    <!-- <script type="module" src="js/swiper-init.js"></script> -->
+     <!-- تهيئة ScrollReveal - تأكد أن هذا الملف موجود وقمت بتعديله -->
+    <script type="module" src="js/scroll-reveal-init.js"></script>
+
+    <!-- أكواد JavaScript المباشرة - لا حاجة لها -->
+
+    <!-- ======================= نهاية تضمين ملفات JavaScript ======================= -->
+
 </body>
 </html>
